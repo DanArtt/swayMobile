@@ -1,0 +1,135 @@
+/* Estrutura geral da tela */
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column; // <- isso garante que a logo fique acima do card
+}
+
+/* Imagem de fundo */
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.logo-sway {
+  width: 120px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.text {
+display: flex;
+position: relative;
+top: -5px;
+right: -50px;
+margin-top: -5px;
+
+
+}
+
+/* Card central de login */
+.card {
+  background: rgba(221, 217, 217, 0.8);
+  border-radius: 25px;
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 320px;
+  backdrop-filter: blur(5px);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Botão de voltar */
+ .back-btn {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Título */
+.card h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Labels dos campos */
+label {
+  display: block;
+  text-align: left;
+  padding-top: 25px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Inputs de email e senha */
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Botão de entrar */
+.entrar-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.entrar-btn:hover {
+  background-color: #333;
+}
+
+/* Links de esqueceu a senha e cadastro */
+.link {
+  padding-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.link a {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 20px 15px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .entrar-btn {
+    font-size: 14px;
+  }
+}

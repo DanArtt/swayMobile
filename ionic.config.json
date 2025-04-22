@@ -1,0 +1,7 @@
+{
+  "name": "swayMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

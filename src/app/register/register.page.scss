@@ -1,0 +1,179 @@
+/* Estrutura geral da tela */
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .background-wrapper {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: -2; // <- isso garante que a logo fique acima do card
+  }
+  
+  /* Imagem de fundo */
+  .background-img {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vh;
+    height: 80vh;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+.logo-sway {
+  width: 120px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+  
+  .logo-sway {
+    width: 120px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .text {
+    font-size: 24px;
+    display: flex;
+    position: relative;
+    top: -8px;
+    right: -75px;
+    margin-top: -5px;
+    color: #000000;
+  }
+  
+  /* Card central de login */
+  .card {
+    background: #ddd9d9cc;
+    border-radius: 25px;
+    padding: 30px 20px;
+    width: 90%;
+    max-width: 360px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    position: relative;
+    z-index: 3;
+  }
+  
+  /* Botão de voltar */
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  /* Título */
+  
+  /* Labels dos campos */
+  label {
+    display: flex;
+    padding-left: 30px;
+    padding-top: 25px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #000000;
+  }
+  
+  /* Inputs de email e senha */
+  .campo {
+    width: 85%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #b2b2b2;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Botão de entrar */
+  .entrar-btn {
+    font-size: 16px;
+    width: 50%;
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .entrar-btn:hover {
+    background-color: #333;
+  }
+  
+  /* Links de esqueceu a senha e cadastro */
+  .link {
+    padding-top: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .link a {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+.containerCampo {
+    display: flex;
+}
+
+.inputCep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.inputNumeroCasa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.campoCep {
+    width: 75%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #b2b2b2;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    color: #000000;
+    margin-left: 25px;
+}
+
+.campoCasa {
+    width: 85%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #b2b2b2;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    color: #000000;
+}
+.labelCasa {
+    position: relative;
+    right: 22px;
+}

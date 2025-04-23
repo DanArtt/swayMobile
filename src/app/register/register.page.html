@@ -1,13 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="background-wrapper">
+  <!-- Imagem de fundo -->
+  <img
+    src="../../assets/Fundo-Page-Login.png"
+    alt="fundo estilizado"
+    class="background-img"
+  />
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <!-- Logo acima do card -->
+  <img src="../../assets/Logo1.png" alt="Logo SWAY" class="logo-sway" />
+
+  <!-- Card de login -->
+  <div class="card">
+    <!-- Botão de voltar -->
+    <div class="cad-cabecalho">
+      <button class="back-btn" [routerLink]="['/home']">
+        <img src="../../assets/Seta.png" alt="" />
+      </button>
+      <h2 class="text">Crie sua Conta</h2>
+    </div>
+
+    <label for="name">Nome:</label>
+    <input class="campo" type="text" id="name" placeholder="Digite seu Nome:" />
+
+    <label for="cpf">CPF:</label>
+    <input class="campo" type="text" id="cpf" placeholder="Digite seu CPF:" />
+
+    <label for="date">Data de Nascimento:</label>
+    <input class="campo" type="date" id="date" />
+
+    <div class="containerCampo">
+      <div class="inputCep">
+        <label for="cep">CEP:</label>
+        <input class="campoCep" type="text" id="cep" />
+      </div>
+
+      <div class="inputNumeroCasa">
+        <label class="labelCasa" for="numeroCasa">N° Residência:</label>
+        <input class="campoCasa" type="text" id="numeroCasa" />
+      </div>
+    </div>
+
+    <label for="rua">Logradouro:</label>
+    <input class="campo" type="text" id="logradouro" placeholder="Digite sua Rua:" />
+
+    <label for="bairro">Bairro:</label>
+    <input class="campo" type="text" id="bairro" placeholder="Digite seu Bairro:"/>
+
+    <label for="date">Cidade:</label>
+    <input class="campo" type="text" id="cidade" placeholder="Digite sua Cidade:"/>
+
+    <label for="date">Senha:</label>
+    <input class="campo" type="password" id="senha" placeholder="Digite sua Senha:"/>
+
+    <label for="date">Confirmar Senha:</label>
+    <input class="campo" type="password" id="confirmaSenha" placeholder="Confirme sua Senha:"/>
+
+    <button class="entrar-btn">Criar Conta</button>
+  </div>
+</div>

@@ -1,20 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<header>
+  <div class="separador"></div>
+  <div class="navbar">
+    <div class="ladoEsquerdo">
+      <button class="botaoMenu">
+        <img src="../../assets/icon/Icone-Mais.png" class="imgMenu" />
+      </button>
+      <img src="../../assets/LogoBranca.png" class="logoSway" />
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="ladoDireito">
+      <button class="botaoCompras">
+        <div class="carrinho">
+          <img src="../../assets/icon/Icone-Carrinho.png" class="imgSacola" />
+          <div class="badge">0</div>
+        </div>
+      </button>
+    </div>
   </div>
-</ion-content>
+
+  <div class="fundoNavbar">
+    <img
+      class="imgFundo"
+      src="../../assets/background-Navbar.png"
+      class="imgFundo"
+    />
+
+    <div class="conteudoSlogan">
+      <img class="imgSlogan" src="../../assets/slogan.png" class="imgSlogan" />
+    </div>
+  </div>
+</header>

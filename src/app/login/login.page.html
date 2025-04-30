@@ -13,17 +13,38 @@
   <div class="card">
     <!-- Botão de voltar -->
     <div class="cad-cabecalho">
-      <button class="back-btn">
+      <button class="back-btn" [routerLink]="['/home']">
         <img src="../../assets/Seta.png" alt="" />
       </button>
       <h2 class="text">Acesse sua Conta</h2>
     </div>
 
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" placeholder="Digite seu E-mail:" />
+<!-- E-mail -->
+<ion-input
+  type="email"
+  fill="solid"
+  label="Email"
+  labelPlacement="floating"
+  helperText="Digite um E-mail Valido"
+  errorText="E-mail Inválido"
+  ngModel
+  email
+></ion-input>
 
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" placeholder="Digite sua Senha:" />
+<!-- Senha -->
+<ion-input
+  type="password"
+  fill="solid"
+  label="Senha"
+  labelPlacement="floating"
+  helperText="Crie uma senha (mínimo 6 caracteres)"
+  errorText="Senha Inválida"
+  name="senha"
+  required
+  maxlength="12"
+  ngModel
+  senha
+></ion-input>
 
     <button class="entrar-btn">Entrar</button>
 

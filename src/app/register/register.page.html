@@ -18,6 +18,7 @@
       </button>
       <h2 class="text">Crie sua Conta</h2>
     </div>
+    <<<<<<< HEAD
     <!-- Nome -->
     <ion-input
       type="text"
@@ -103,7 +104,94 @@
       ngModel
       confirmarSenha
     ></ion-input>
+    =======
+    <!-- Nome -->
+    <ion-input
+      type="text"
+      fill="solid"
+      label="Nome"
+      labelPlacement="floating"
+      helperText="Digite seu nome completo"
+      errorText="Nome é Obrigatório"
+      name="nome"
+      ngModel
+      name
+      minlength="15"
+      maxLength="60"
+      required
+    ></ion-input>
 
-    <button class="entrar-btn">Criar Conta</button>
+    <!-- Data de Nascimento -->
+    <ion-input
+      type="date"
+      fill="solid"
+      label="Data de Nascimento"
+      labelPlacement="floating"
+      helperText="Selecione sua data de nascimento"
+      errorText="Data Inválida"
+      name="dataNascimento"
+      ngModel
+      date
+      required
+    ></ion-input>
+
+    <!-- CPF -->
+    <ion-input
+      type="text"
+      fill="solid"
+      label="CPF"
+      labelPlacement="floating"
+      helperText="Digite seu CPF (somente números)"
+      errorText="CPF Inválido"
+      name="cpf"
+      ngModel
+      cpf
+      required
+    ></ion-input>
+
+    <!-- E-mail -->
+    <ion-input
+      type="email"
+      fill="solid"
+      label="Email"
+      labelPlacement="floating"
+      helperText="Enter a valid email"
+      errorText="E-mail Inválido"
+      ngModel
+      email
+    ></ion-input>
+
+    <!-- Senha -->
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Senha"
+      labelPlacement="floating"
+      helperText="Crie uma senha (mínimo 6 caracteres)"
+      errorText="Senha Inválida"
+      name="senha"
+      required
+      maxlength="12"
+      ngModel
+      senha
+    ></ion-input>
+
+    <!-- Confirmar Senha -->
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Confirmar Senha"
+      labelPlacement="floating"
+      helperText="Repita a senha"
+      errorText="As Senhas Não Coincidem"
+      name="confirmarSenha"
+      required
+      maxlength="12"
+      ngModel
+      confirmarSenha
+    ></ion-input>
+    >>>>>>> 1321936db0c6d0272fb104f3e1be8bb633648fa4
+
+    <button class="entrar-btn">Criar Conta1</button>
   </div>
 </div>

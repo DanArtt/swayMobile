@@ -19,6 +19,7 @@
       <h2 class="text">Acesse sua Conta</h2>
     </div>
 
+    <<<<<<< HEAD
     <!-- E-mail -->
     <ion-input
       type="email"
@@ -45,6 +46,34 @@
       ngModel
       senha
     ></ion-input>
+    =======
+    <!-- E-mail -->
+    <ion-input
+      type="email"
+      fill="solid"
+      label="Email"
+      labelPlacement="floating"
+      helperText="Digite um E-mail Valido"
+      errorText="E-mail Inválido"
+      ngModel
+      email
+    ></ion-input>
+
+    <!-- Senha -->
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Senha"
+      labelPlacement="floating"
+      helperText="Crie uma senha (mínimo 6 caracteres)"
+      errorText="Senha Inválida"
+      name="senha"
+      required
+      maxlength="12"
+      ngModel
+      senha
+    ></ion-input>
+    >>>>>>> 1321936db0c6d0272fb104f3e1be8bb633648fa4
 
     <button class="entrar-btn">Entrar</button>
 
@@ -54,7 +83,7 @@
     </p>
 
     <p class="link">
-      Ainda não possui uma conta ?<br />
+      Ainda não possui uma conta ?1<br />
       <a href="#" [routerLink]="['/register']">Cadastre-se</a>
     </p>
   </div>

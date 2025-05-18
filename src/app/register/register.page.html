@@ -18,42 +18,91 @@
       </button>
       <h2 class="text">Crie sua Conta</h2>
     </div>
+    <!-- Nome -->
+    <ion-input
+      type="text"
+      fill="solid"
+      label="Nome"
+      labelPlacement="floating"
+      helperText="Digite seu nome completo"
+      errorText="Nome é Obrigatório"
+      name="nome"
+      ngModel
+      name
+      minlength="15"
+      maxLength="60"
+      required
+    ></ion-input>
 
-    <label for="name">Nome:</label>
-    <input class="campo" type="text" id="name" placeholder="Digite seu Nome:" />
+    <!-- Data de Nascimento -->
+    <ion-input
+      type="date"
+      fill="solid"
+      label="Data de Nascimento"
+      labelPlacement="floating"
+      helperText="Selecione sua data de nascimento"
+      errorText="Data Inválida"
+      name="dataNascimento"
+      ngModel
+      date
+      required
+    ></ion-input>
 
-    <label for="cpf">CPF:</label>
-    <input class="campo" type="text" id="cpf" placeholder="Digite seu CPF:" />
+    <!-- CPF -->
+    <ion-input
+      type="text"
+      fill="solid"
+      label="CPF"
+      labelPlacement="floating"
+      helperText="Digite seu CPF (somente números)"
+      errorText="CPF Inválido"
+      name="cpf"
+      ngModel
+      cpf
+      required
+    ></ion-input>
 
-    <label for="date">Data de Nascimento:</label>
-    <input class="campo" type="date" id="date" />
+    <!-- E-mail -->
+    <ion-input
+      type="email"
+      fill="solid"
+      label="Email"
+      labelPlacement="floating"
+      helperText="Enter a valid email"
+      errorText="E-mail Inválido"
+      ngModel
+      email
+    ></ion-input>
 
-    <div class="containerCampo">
-      <div class="inputCep">
-        <label for="cep">CEP:</label>
-        <input class="campoCep" type="text" id="cep" />
-      </div>
+    <!-- Senha -->
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Senha"
+      labelPlacement="floating"
+      helperText="Crie uma senha (mínimo 6 caracteres)"
+      errorText="Senha Inválida"
+      name="senha"
+      required
+      maxlength="12"
+      ngModel
+      senha
+    ></ion-input>
 
-      <div class="inputNumeroCasa">
-        <label class="labelCasa" for="numeroCasa">N° Residência:</label>
-        <input class="campoCasa" type="text" id="numeroCasa" />
-      </div>
-    </div>
-
-    <label for="rua">Logradouro:</label>
-    <input class="campo" type="text" id="logradouro" placeholder="Digite sua Rua:" />
-
-    <label for="bairro">Bairro:</label>
-    <input class="campo" type="text" id="bairro" placeholder="Digite seu Bairro:"/>
-
-    <label for="date">Cidade:</label>
-    <input class="campo" type="text" id="cidade" placeholder="Digite sua Cidade:"/>
-
-    <label for="date">Senha:</label>
-    <input class="campo" type="password" id="senha" placeholder="Digite sua Senha:"/>
-
-    <label for="date">Confirmar Senha:</label>
-    <input class="campo" type="password" id="confirmaSenha" placeholder="Confirme sua Senha:"/>
+    <!-- Confirmar Senha -->
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Confirmar Senha"
+      labelPlacement="floating"
+      helperText="Repita a senha"
+      errorText="As Senhas Não Coincidem"
+      name="confirmarSenha"
+      required
+      maxlength="12"
+      ngModel
+      confirmarSenha
+    ></ion-input>
 
     <button class="entrar-btn">Criar Conta</button>
   </div>

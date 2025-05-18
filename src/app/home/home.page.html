@@ -1,32 +1,153 @@
-<header>
-  <div class="separador"></div>
-  <div class="navbar">
-    <div class="ladoEsquerdo">
-      <button class="botaoMenu">
-        <img src="../../assets/icon/Icone-Mais.png" class="imgMenu" />
-      </button>
-      <img src="../../assets/LogoBranca.png" class="logoSway" />
-    </div>
+<ion-header>
+  <ion-toolbar class="toolbar-background">
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-img src="assets/icon/Icone-Mais.png" class="imgMenu"></ion-img>
+      </ion-button>
+      <ion-img src="assets/LogoBranca.png" class="logoSway"></ion-img>
+    </ion-buttons>
 
-    <div class="ladoDireito">
-      <button class="botaoCompras">
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="botaoCompras">
         <div class="carrinho">
-          <img src="../../assets/icon/Icone-Carrinho.png" class="imgSacola" />
+          <ion-img
+            src="assets/icon/Icone-Carrinho.png"
+            class="imgSacola"
+          ></ion-img>
           <div class="badge">0</div>
         </div>
-      </button>
-    </div>
-  </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 
-  <div class="fundoNavbar">
-    <img
-      class="imgFundo"
-      src="../../assets/background-Navbar.png"
-      class="imgFundo"
-    />
+  <!-- Imagem de fundo da navbar -->
+</ion-header>
 
-    <div class="conteudoSlogan">
-      <img class="imgSlogan" src="../../assets/slogan.png" class="imgSlogan" />
-    </div>
+<ion-content>
+  <ion-img src="assets/background-Navbar.png" class="imgFundo"></ion-img>
+  <!-- Slogan centralizado -->
+  <div class="conteudoSlogan">
+    <ion-img src="assets/slogan.png" class="imgSlogan"></ion-img>
   </div>
-</header>
+  <!-- Barra de pesquisa -->
+  <ion-searchbar
+    show-clear-button="always"
+    placeholder="Pesquisar..."
+  ></ion-searchbar>
+
+  <!-- Slides Imagens -->
+  <swiper-container
+    #swiper
+    effect="coverflow"
+    grab-cursor="true"
+    centered-slides="true"
+    slides-per-view="auto"
+    loop="true"
+    initial-slide="2"
+    space-between="30"
+    autoplay='{
+    "delay": 3000,
+    "disableOnInteraction": false
+  }'
+    coverflow-effect='{
+    "rotate": 0,
+    "stretch": 0,
+    "depth": 100,
+    "modifier": 2.5,
+    "slideShadows": false
+  }'
+    pagination-dynamic-bullets="true"
+  >
+    <swiper-slide class="slide">
+      <img src="../../assets/Imagem-Card-4.png" alt="Imagem 1" />
+    </swiper-slide>
+    <swiper-slide class="slide">
+      <img src="../../assets/Imagem-Card-1.png" alt="Imagem 2" />
+    </swiper-slide>
+    <swiper-slide class="slide">
+      <img src="../../assets/Imagem-Card-2.png" alt="Imagem 3" />
+    </swiper-slide>
+    <swiper-slide class="slide">
+      <img src="../../assets/Imagem-Card-3.png" alt="Imagem 4" />
+    </swiper-slide>
+  </swiper-container>
+
+  <ion-button color="button-background" class="botaoNovidades"
+    >Ver todos os Lançamentos</ion-button
+  >
+
+  <!-- Slides Imagens da Marca -->
+  <swiper-container
+    effect="coverflow"
+    grab-cursor="true"
+    centered-slides="true"
+    slides-per-view="auto"
+    loop="true"
+    initial-slide="3"
+    space-between="30"
+    autoplay='{
+    "delay": 3000,
+    "disableOnInteraction": false
+  }'
+    coverflow-effect='{
+    "rotate": 0,
+    "stretch": 0,
+    "depth": 100,
+    "modifier": 2.5,
+    "slideShadows": false
+  }'
+  >
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-baw.png" alt="Imagem 1" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-high.png" alt="Imagem 2" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-nike.png" alt="Imagem 3" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img
+        class="slideImg"
+        src="../../assets/Marca-swagger.png"
+        alt="Imagem 4"
+      />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-thug.png" alt="Imagem 5" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-surf.png" alt="Imagem 6" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-thrs.png" alt="Imagem 7" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-toy.png" alt="Imagem 8" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img class="slideImg" src="../../assets/Marca-vans.png" alt="Imagem 9" />
+    </swiper-slide>
+    <swiper-slide class="slideContentImg">
+      <img
+        class="slideImg"
+        src="../../assets/Marca-adidas.png"
+        alt="Imagem 10"
+      />
+    </swiper-slide>
+  </swiper-container>
+  <ion-buttons class="botoesMarca">
+    <ion-button
+      ><img
+        class="botaoInteracao"
+        src="../../assets/icon/Icone-Botao-Esquerda.png"
+        alt=""
+    /></ion-button>
+    <ion-button
+      ><img
+        class="botaoInteracao"
+        src="../../assets/icon/Icone-Botao-Direita.png"
+        alt=""
+    /></ion-button>
+  </ion-buttons>
+</ion-content>

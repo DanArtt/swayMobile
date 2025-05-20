@@ -68,6 +68,7 @@ ion-slide {
 
 swiper-container {
   margin-top: 20px;
+  width: 360px;
 }
 
 .slide {
@@ -77,8 +78,8 @@ swiper-container {
   width: auto;
 
   img {
-    width: 181px;
-    height: 272px;
+    width: 180px;
+    height: 260px;
     border-radius: 15px;
   }
 }
@@ -102,8 +103,8 @@ swiper-container {
   width: auto;
 
   .slideImg {
-    width: 110px;
-    height: 60px;
+    width: 100px;
+    height: 50px;
   }
 }
 
@@ -117,4 +118,52 @@ swiper-container {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+
+.card-section {
+
+  .custom-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    background: transparent; // transparente pra destacar só a imagem
+    box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.521);
+
+    img {
+      width: 371px;
+      height: 245px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // sombra sutil e profissional
+      transition: transform 0.3s ease;
+
+      // Efeito leve ao passar o mouse (opcional)
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
+    .card-button {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      --background: rgba(0, 0, 0, 0.6);
+      --color: #ffffff;
+      --border-radius: 8px;
+      --padding-start: 10px;
+      --padding-end: 10px;
+      --padding-top: 4px;
+      --padding-bottom: 4px;
+      font-size: 14px;
+      text-transform: none;
+      letter-spacing: normal;
+      height: auto;
+      min-height: unset;
+      border-radius: 25px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+  }
 }

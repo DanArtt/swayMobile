@@ -17,4 +17,29 @@ export class HomePage implements AfterViewInit {
       }
     }, 100); // espera um pouco para garantir que tudo esteja renderizado
   }
+
+  produtos = [
+  {
+    nome: 'Camiseta ThugNine DouhBoy',
+    preco: 179.99,
+    imagem: '../../assets/CAMISETA-DOUGHBOY1.png',
+  },
+  {
+    nome: 'T-Shirt Class Verde',
+    preco: 179.99,
+    imagem: '../../assets/T-SHIRT-CLASS-GREEN.png',
+  },
+  {
+    nome: 'Short Trunda Off-White',
+    preco: 179.99,
+    imagem: '../../assets/SHORT-TUNDRA-OFF-WHITE.png',
+  },
+  {
+    nome: 'Óculos De Sol Dunville',
+    preco: 179.99,
+    imagem: '../../assets/oculos-De-Sol-Dunville.png',
+  },
+  // Adicione mais produtos aqui!
+];
+
 }

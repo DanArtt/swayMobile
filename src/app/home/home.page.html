@@ -132,5 +132,29 @@
   </ion-grid>
 </section>
 
-  
+<ion-grid class="custom-grid">
+  <ion-row class="custom-row">
+    <ion-col size="6" size-md="4" *ngFor="let produto of produtos">
+      <ion-card class="product-card">
+        <ion-img [src]="produto.imagem"></ion-img>
+
+        <ion-card-content>
+          <div class="rating">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-half"></ion-icon>
+            <span>(4.7)</span>
+          </div>
+
+          <h2 class="product-title">{{ produto.nome }}</h2>
+          <p class="price">R$ {{ produto.preco }}</p>
+
+          <ion-button expand="block" class="buy-button">Comprar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>

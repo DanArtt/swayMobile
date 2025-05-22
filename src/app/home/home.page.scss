@@ -252,3 +252,149 @@ ion-col {
   }
 }
 
+
+/* FOOTER */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+
+  .social-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px; // espaço maior entre os itens
+    margin-bottom: 24px;
+
+    .barra-social {
+      width: 80px; // agora bem mais longa
+      height: 2px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+
+      img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 12px;
+    padding: 0 12px;
+  }
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    margin-top: 24px;
+    color: #fff;
+
+    .contact-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .inputEmail {
+        width: 80%;
+        max-width: 260px;
+        margin: 8px 0;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 6px;
+        padding: 6px 10px;
+        color: #fff;
+        font-size: 0.75rem;
+      }
+
+      ::placeholder {
+        color: #ccc;
+        opacity: 1;
+      }
+
+      .buttomEmail {
+        --background: #fff;
+        color: #000;
+        font-weight: 600;
+        border-radius: 10px;
+        height: 36px;
+        font-size: 14px;
+        text-transform: none;
+
+        img {
+          margin-left: 6px;
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  .contact {
+    font-size: 13px;
+    margin-bottom: 24px;
+
+    h3 {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    p {
+      margin: 2px 0;
+    }
+  }
+
+  .payment-section {
+    h3 {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .payment-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+
+      img {
+        width: 96px;  // tamanho grande agora
+        height: 56px; // proporcionalmente maior
+        object-fit: contain;
+      }
+    }
+  }
+
+  .legal {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    padding: 0 12px;
+  }
+
+  .signature {
+    font-size: 12px;
+    font-weight: 600;
+
+    img {
+      margin-top: 4px;
+      width: 64px;
+      height: auto;
+    }
+  }
+}

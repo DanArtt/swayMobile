@@ -42,4 +42,11 @@ export class HomePage implements AfterViewInit {
   // Adicione mais produtos aqui!
 ];
 
+  activeGroup = 0;
+
+setGroup(index: number) {
+  this.activeGroup = index;
+}
+
+
 }

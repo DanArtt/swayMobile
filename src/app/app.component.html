@@ -1,3 +1,64 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="main-content" side="start" menuId="mainMenu" type="reveal">
+    <ion-content class="full-screen-menu">
+      <div class="menu-container">
+
+        <img src="../../assets/logPreta.png" class="logo-menu" />
+
+        <ion-button (click)="closeMenu()" class="close-btn" fill="clear">
+          <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+        </ion-button>
+
+        <ion-list class="menu-list">
+          <ion-item lines="none" detail="false" (click)="toggleMenu(0)" [class.expanded]="expanded[0]">
+            Camisetas
+            <ion-icon [name]="expanded[0] ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"></ion-icon>
+          </ion-item>
+          <div *ngIf="expanded[0]" class="submenu">
+            <ion-item lines="none">Oversized</ion-item>
+            <ion-item lines="none">Estampadas</ion-item>
+          </div>
+
+          <ion-item lines="none" detail="false" (click)="toggleMenu(1)" [class.expanded]="expanded[1]">
+            Bermudas
+            <ion-icon [name]="expanded[1] ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"></ion-icon>
+          </ion-item>
+          <div *ngIf="expanded[1]" class="submenu">
+            <ion-item lines="none">Moletom</ion-item>
+            <ion-item lines="none">Jeans</ion-item>
+          </div>
+
+          <ion-item lines="none" detail="false" (click)="toggleMenu(2)" [class.expanded]="expanded[2]">
+            Calças
+            <ion-icon [name]="expanded[2] ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"></ion-icon>
+          </ion-item>
+          <div *ngIf="expanded[2]" class="submenu">
+            <ion-item lines="none">Cargo</ion-item>
+            <ion-item lines="none">Wide Leg</ion-item>
+          </div>
+
+          <ion-item lines="none" detail="false" (click)="toggleMenu(3)" [class.expanded]="expanded[3]">
+            Acessórios
+            <ion-icon [name]="expanded[3] ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"></ion-icon>
+          </ion-item>
+          <div *ngIf="expanded[3]" class="submenu">
+            <ion-item lines="none">Bonés</ion-item>
+            <ion-item lines="none">Óculos</ion-item>
+          </div>
+        </ion-list>
+
+      </div>
+
+      <div class="auth-actions">
+        <button class="btn-entrar">Entrar</button>
+        <div class="register-link">
+          Ainda não possui uma conta? 
+          
+          <a href="#">Cadastre-se</a>
+        </div>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

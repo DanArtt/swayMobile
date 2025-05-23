@@ -158,23 +158,68 @@
   </ion-row>
 </ion-grid>
 
- <!--FOOTER -->
+  <!-- FRETE/PARCELA  -->
+
+<div class="promo-carousel">
+  <div class="carousel-group" *ngIf="activeGroup === 0">
+    <div class="promo-item">
+      <img src="../../assets/credito.png" alt="Parcelamento" />
+      <h3>Parcelamento</h3>
+      <p>em até 6 vezes sem juros</p>
+    </div>
+    <div class="promo-item">
+      <img src="../../assets/frete 1.png" alt="Frete Grátis" />
+      <h3>Frete Grátis</h3>
+      <p>Nas compras acima de R$ 499</p>
+    </div>
+  </div>
+
+  <div class="carousel-group" *ngIf="activeGroup === 1">
+    <div class="promo-item">
+      <img src="../../assets/promocao.png" alt="Promoção" />
+      <h3>Promoção</h3>
+      <p>Descontos imperdíveis toda semana</p>
+    </div>
+    <div class="promo-item">
+      <img src="../../assets/boleto.png" alt="Boletos" />
+      <h3>Boletos</h3>
+      <p>Pagamento facilitado por boleto</p>
+    </div>
+  </div>
+
+  <div class="carousel-buttons">
+    <button (click)="setGroup(0)" [class.active]="activeGroup === 0"></button>
+    <button (click)="setGroup(1)" [class.active]="activeGroup === 1"></button>
+  </div>
+</div>
+
+
+
+  <!-- FOOTER -->
 <ion-footer class="footer">
   <div class="social-wrapper">
-    <div class="barra-social"></div>
-    <div class="social-icons">
+  <div class="barra-social"></div>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/sualoja" target="_blank" rel="noopener">
       <img src="../../assets/instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://www.youtube.com/sualoja" target="_blank" rel="noopener">
       <img src="../../assets/youtube.png" alt="YouTube" />
+    </a>
+    <a href="https://t.me/sualoja" target="_blank" rel="noopener">
       <img src="../../assets/telegrama.png" alt="Telegram" />
+    </a>
+    <a href="https://www.facebook.com/sualoja" target="_blank" rel="noopener">
       <img src="../../assets/facebook.png" alt="Facebook" />
-    </div>
-    <div class="barra-social"></div>
+    </a>
   </div>
+  <div class="barra-social"></div>
+</div>
+
 
   <h2 class="title">FAÇA PARTE DA NOSSA FAMÍLIA</h2>
   <p class="subtitle">Inscreva-se para receber ofertas exclusivas à vendas antecipadas</p>
 
- 
   <div class="contact-section">
     <div class="contact-text">
       <ion-input

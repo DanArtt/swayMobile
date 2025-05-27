@@ -7,6 +7,7 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
   standalone: false,
 })
+//Slides
 export class HomePage implements AfterViewInit {
   @ViewChild('swiper', { static: false }) swiperRef!: ElementRef;
 
@@ -23,7 +24,7 @@ export class HomePage implements AfterViewInit {
     this.menu.enable(true, 'mainMenu');
     this.menu.open('mainMenu');
   }
-
+  //Visualização dos produtos
   produtos = [
     {
       nome: 'Camiseta ThugNine DouhBoy',
@@ -58,7 +59,7 @@ export class HomePage implements AfterViewInit {
     this.activeGroup = index;
   }
 
-  //Slide
+  //Slide Propaganda
   activeSlide = 1;
 
   changeSlide(slideNumber: number) {

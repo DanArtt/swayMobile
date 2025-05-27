@@ -10,6 +10,7 @@ register();
   styleUrls: ['app.component.scss'],
   standalone: false,
 })
+//Biel que fez esse codigo, pergunte para ele como funciona
 export class AppComponent {
   expanded: boolean[] = [false, false, false, false];
 
@@ -20,6 +21,6 @@ export class AppComponent {
   }
 
   toggleMenu(index: number) {
-    this.expanded[index] = !this.expanded[index];
+    this.expanded[index] = !this.expanded[index
   }
 }

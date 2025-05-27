@@ -22,6 +22,5 @@ export class AppComponent {
 
   toggleMenu(index: number) {
     this.expanded[index] = !this.expanded[index];
-    for (let i = 0; i < this.expanded.length; i++) {}
   }
 }

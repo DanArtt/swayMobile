@@ -30,6 +30,21 @@
   font-family: Inria;
 }
 
+ion-card,
+ion-card-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+ion-list {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+ion-content {
+  --background: transparent !important;
+}
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------

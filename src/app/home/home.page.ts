@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -16,5 +17,51 @@ export class HomePage implements AfterViewInit {
         swiperEl.swiper.update();
       }
     }, 100); // espera um pouco para garantir que tudo esteja renderizado
+  }
+  constructor(private menu: MenuController) {}
+  openMenu() {
+    this.menu.enable(true, 'mainMenu');
+    this.menu.open('mainMenu');
+  }
+
+  produtos = [
+    {
+      nome: 'Camiseta ThugNine DouhBoy',
+      preco: 179.99,
+      imagem: '../../assets/CAMISETA-DOUGHBOY1.png',
+      classificacao: '4.9',
+    },
+    {
+      nome: 'T-Shirt Class Verde',
+      preco: 179.99,
+      imagem: '../../assets/T-SHIRT-CLASS-GREEN.png',
+      classificacao: '4.3',
+    },
+    {
+      nome: 'Short Trunda Off-White',
+      preco: 179.99,
+      imagem: '../../assets/SHORT-TUNDRA-OFF-WHITE.png',
+      classificacao: '4.7',
+    },
+    {
+      nome: 'Óculos De Sol Dunville',
+      preco: 179.99,
+      imagem: '../../assets/oculos-De-Sol-Dunville.png',
+      classificacao: '4.5',
+    },
+    // Adicione mais produtos aqui!
+  ];
+
+  activeGroup = 0;
+
+  setGroup(index: number) {
+    this.activeGroup = index;
+  }
+
+  //Slide
+  activeSlide = 1;
+
+  changeSlide(slideNumber: number) {
+    this.activeSlide = slideNumber;
   }
 }

@@ -1,7 +1,8 @@
+<!-- Conteudo da NavBar -->
 <ion-header>
   <ion-toolbar class="toolbar-background">
     <ion-buttons slot="start">
-      <ion-button fill="clear">
+      <ion-button fill="clear" (click)="openMenu()">
         <ion-img src="assets/icon/Icone-Mais.png" class="imgMenu"></ion-img>
       </ion-button>
       <ion-img src="assets/LogoBranca.png" class="logoSway"></ion-img>
@@ -19,13 +20,11 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-
-  <!-- Imagem de fundo da navbar -->
 </ion-header>
 
 <ion-content>
   <ion-img src="assets/background-Navbar.png" class="imgFundo"></ion-img>
-  <!-- Slogan centralizado -->
+  <!-- Slogan -->
   <div class="conteudoSlogan">
     <ion-img src="assets/slogan.png" class="imgSlogan"></ion-img>
   </div>
@@ -150,4 +149,214 @@
         alt=""
     /></ion-button>
   </ion-buttons>
+
+  <!-- Categorias -->
+  <section class="card-section">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="custom-card">
+            <img src="../../assets/imgShort.png" alt="Short" />
+            <ion-button class="card-button" fill="solid" size="small"
+              >Short</ion-button
+            >
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-card class="custom-card">
+            <img src="../../assets/imgAcessorio.png" alt="Acessórios" />
+            <ion-button class="card-button" fill="solid" size="small"
+              >Acessórios</ion-button
+            >
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-card class="custom-card">
+            <img src="../../assets/imgCamisa.png" alt="Camisetas" />
+            <ion-button class="card-button" fill="solid" size="small"
+              >Camisetas</ion-button
+            >
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+  <!-- Produtos em destaques -->
+  <ion-grid class="custom-grid">
+    <ion-row class="custom-row">
+      <ion-col size="6" size-md="4" *ngFor="let produto of produtos">
+        <ion-card class="product-card">
+          <ion-img [src]="produto.imagem"></ion-img>
+
+          <ion-card-content>
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+              <span class="classification">{{produto.classificacao}}</span>
+            </div>
+
+            <h2 class="product-title">{{ produto.nome }}</h2>
+            <p class="price">R$ {{ produto.preco }}</p>
+
+            <ion-button expand="block" class="buy-button">Comprar</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Slider de recursos -->
+  <ion-grid
+    class="feature-slider"
+    [ngClass]="{'slide-1': activeSlide === 1, 'slide-2': activeSlide === 2}"
+  >
+    <ion-row class="cards-group">
+      <!-- Card 1 -->
+      <ion-col size="6">
+        <ion-card class="feature-card">
+          <ion-icon name="card-outline" class="icon"></ion-icon>
+          <ion-card-title class="title">Parcelamento</ion-card-title>
+          <ion-card-subtitle class="description"
+            >em até 6x sem juros</ion-card-subtitle
+          >
+        </ion-card>
+      </ion-col>
+
+      <!-- Card 2 -->
+      <ion-col size="6">
+        <ion-card class="feature-card">
+          <ion-icon name="car-outline" class="icon"></ion-icon>
+          <ion-card-title class="title">Frete Grátis</ion-card-title>
+          <ion-card-subtitle class="description"
+            >Nas compras acima de R$ 499</ion-card-subtitle
+          >
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="cards-group">
+      <!-- Card 3 -->
+      <ion-col size="6">
+        <ion-card class="feature-card">
+          <ion-icon name="shield-checkmark-outline" class="icon"></ion-icon>
+          <ion-card-title class="title">Compra Segura</ion-card-title>
+          <ion-card-subtitle class="description"
+            >Seus dados estão protegidos</ion-card-subtitle
+          >
+        </ion-card>
+      </ion-col>
+
+      <!-- Card 4 -->
+      <ion-col size="6">
+        <ion-card class="feature-card">
+          <ion-icon name="swap-horizontal-outline" class="icon"></ion-icon>
+          <ion-card-title class="title">Troca Fácil</ion-card-title>
+          <ion-card-subtitle class="description"
+            >7 dias para trocar</ion-card-subtitle
+          >
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Botões de controle -->
+  <div class="slider-buttons">
+    <button
+      class="dot"
+      [ngClass]="{'active': activeSlide === 1}"
+      (click)="changeSlide(1)"
+    ></button>
+    <button
+      class="dot"
+      [ngClass]="{'active': activeSlide === 2}"
+      (click)="changeSlide(2)"
+    ></button>
+  </div>
+
+  <!-- FOOTER -->
+  <ion-footer class="footer">
+    <div class="social-wrapper">
+      <div class="barra-social"></div>
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/sualoja"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="../../assets//icon/instagram.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://www.youtube.com/sualoja"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="../../assets/icon/youtube.png" alt="YouTube" />
+        </a>
+        <a href="https://t.me/sualoja" target="_blank" rel="noopener">
+          <img src="../../assets//icon/telegrama.png" alt="Telegram" />
+        </a>
+        <a
+          href="https://www.facebook.com/sualoja"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="../../assets//icon/facebook.png" alt="Facebook" />
+        </a>
+      </div>
+      <div class="barra-social"></div>
+    </div>
+
+    <h2 class="title">FAÇA PARTE DA NOSSA FAMÍLIA</h2>
+    <p class="subtitle">
+      Inscreva-se para receber ofertas exclusivas à vendas antecipadas
+    </p>
+
+    <div class="contact-section">
+      <div class="contact-text">
+        <ion-input
+          type="email"
+          placeholder="E-mail"
+          class="inputEmail"
+        ></ion-input>
+        <ion-button class="buttomEmail"> Enviar </ion-button>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h3>Fale Conosco</h3>
+      <p>Tel: (21) 4105-8684</p>
+      <p>E-mail: sac..sway.com.br</p>
+      <p>WhatsApp: (21) 98765-4321</p>
+    </div>
+
+    <div class="payment-section">
+      <h3>Formas de Pagamento</h3>
+      <div class="payment-icons">
+        <img src="../../assets/icon/elo.png" alt="Elo" />
+        <img src="../../assets/icon/martercard.png" alt="Mastercard" />
+        <img src="../../assets/icon/visa.png" alt="Visa" />
+        <img src="../../assets/icon/pix.png" alt="Pix" />
+      </div>
+    </div>
+
+    <div class="legal">
+      <p>© 2024 Sway. Todos os direitos reservados.</p>
+      <p>Sway Comércio de Roupas e Acessórios Ltda</p>
+      <p>
+        CNPJ: 12.345.678/0001-90 - Rua das Flores, 123, Bairro: Jardim Azul, São
+        Paulo, SP, CEP: 01234-567
+      </p>
+    </div>
+
+    <div class="signature">
+      <p>Designer e Tecnologia</p>
+      <img src="../../assets/LogoBranca.png" alt="Sway logo" />
+    </div>
+  </ion-footer>
 </ion-content>

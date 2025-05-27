@@ -1,3 +1,5 @@
+/* Estilização do SideMenu */
+
 .full-screen-menu {
   background: #d9d9d9;
   display: flex;
@@ -6,6 +8,7 @@
   padding: 0;
   position: relative;
   font-family: "Inria Sans", sans-serif;
+  display: none;
 }
 
 .menu-container {

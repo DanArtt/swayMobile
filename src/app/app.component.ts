@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router'; // IMPORTANTE
 
 register();
 
@@ -10,11 +11,10 @@ register();
   styleUrls: ['app.component.scss'],
   standalone: false,
 })
-//Biel que fez esse codigo, pergunte para ele como funciona
 export class AppComponent {
   expanded: boolean[] = [false, false, false, false];
 
-  constructor(private menu: MenuController) {}
+  constructor(private menu: MenuController, private router: Router) {}
 
   closeMenu() {
     this.menu.close('mainMenu');
@@ -22,5 +22,10 @@ export class AppComponent {
 
   toggleMenu(index: number) {
     this.expanded[index] = !this.expanded[index];
+  }
+
+  navigateTo(path: string) {
+    this.router.navigateByUrl(path);
+    this.menu.close('mainMenu'); // Fecha o menu após navegar
   }
 }

@@ -1,22 +1,29 @@
 /* Estrutura geral da tela */
-* {
-  padding: 0;
-  margin: 0;
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 
 .background-wrapper {
   background-color: #fff;
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
+  overflow-y: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
-  z-index: -2; // <- isso garante que a logo fique acima do card
+  z-index: 1;
+  padding-bottom: 100px; 
 }
 
-/* Imagem de fundo */
+
 .background-img {
   position: fixed;
   bottom: 0;
@@ -24,16 +31,8 @@
   width: 100vh;
   height: 80vh;
   object-fit: cover;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
-}
-
-.logo-sway {
-  width: 120px;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 2;
 }
 
 .logo-sway {
@@ -54,7 +53,7 @@
   color: #000000;
 }
 
-/* Card central de login */
+
 .card {
   background: #ddd9d9cc;
   border-radius: 25px;
@@ -65,9 +64,10 @@
   text-align: center;
   position: relative;
   z-index: 3;
+  margin-bottom: 40px;
 }
 
-/* Botão de voltar */
+
 .back-btn {
   position: absolute;
   top: 20px;
@@ -78,9 +78,7 @@
   cursor: pointer;
 }
 
-/* Título */
 
-/* Labels dos campos */
 label {
   display: flex;
   padding-left: 30px;
@@ -90,7 +88,7 @@ label {
   color: #000000;
 }
 
-/* Inputs de email e senha */
+
 .campo {
   width: 85%;
   padding: 10px;
@@ -103,7 +101,7 @@ label {
   box-shadow: 2px 2px 5px #000000;
 }
 
-/* Botão de entrar */
+
 .entrar-btn {
   font-size: 16px;
   width: 50%;
@@ -121,7 +119,7 @@ label {
   background-color: #333;
 }
 
-/* Links de esqueceu a senha e cadastro */
+
 .link {
   padding-top: 15px;
   font-size: 16px;
@@ -138,12 +136,7 @@ label {
   display: flex;
 }
 
-.inputCep {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
+.inputCep,
 .inputNumeroCasa {
   display: flex;
   flex-direction: column;
@@ -174,6 +167,7 @@ label {
   color: #000000;
   box-shadow: 2px 2px 5px #000000;
 }
+
 .labelCasa {
   position: relative;
   right: 22px;

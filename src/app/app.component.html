@@ -91,12 +91,14 @@
           </div>
         </ion-list>
       </div>
-      <!-- Parte do login e cadastrar ja com as rotas -->
+      <!-- Parte do login e cadastrar já com as rotas -->
       <div class="auth-actions">
-        <button class="btn-entrar" [routerLink]="['/login']">Entrar</button>
+        <button class="btn-entrar" (click)="navigateTo('/login')">
+          Entrar
+        </button>
         <div class="register-link">
           Ainda não possui uma conta?<br />
-          <a href="#" [routerLink]="['/register']">Cadastre-se</a>
+          <a (click)="navigateTo('/register')">Cadastre-se</a>
         </div>
       </div>
     </ion-content>

@@ -1,18 +1,25 @@
 //Styles da NavBar
 
+.toolbar-background {
+  padding: 10px;
+}
+
 .imgMenu {
   height: 20px;
   width: 25px;
+  margin-top: 10px;
 }
 
 .logoSway {
   height: 18px;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .botaoCompras {
   position: relative;
   right: 8px;
+  margin-top: 10px;
 }
 
 .imgSacola {
@@ -65,9 +72,21 @@ ion-slide {
   align-items: center;
 }
 
-//Barra de Pesquisa
-.sc-ion-searchbar-ios-h {
-  margin-top: 120px;
+.search-wrapper {
+  margin-top: 80px;
+  border-radius: 50px;
+}
+
+ion-searchbar {
+  --background: #fff;
+  --color: #000;
+  --icon-color: #888;
+  --placeholder-color: #aaa;
+  --clear-button-color: #000;
+
+  --box-shadow: 0px 0px 15px -7px rgba(0, 0, 0, 1);
+  --border-radius: 30px;
+  --cancel-button-color: #000;
 }
 
 .slide {
@@ -93,6 +112,7 @@ ion-slide {
   font-size: 16px;
   margin-left: 75px;
   margin-right: 75px;
+  --box-shadow: none;
 }
 
 //Slide de Imagens da Marca

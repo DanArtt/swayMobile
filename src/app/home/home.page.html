@@ -5,7 +5,9 @@
       <ion-button fill="clear" (click)="openMenu()">
         <ion-img src="assets/icon/Icone-Mais.png" class="imgMenu"></ion-img>
       </ion-button>
-      <ion-img src="assets/LogoBranca.png" class="logoSway"></ion-img>
+      <a [routerLink]="['/home']">
+        <ion-img src="assets/LogoBranca.png" class="logoSway"></ion-img>
+      </a>
     </ion-buttons>
 
     <ion-buttons slot="end">
@@ -74,7 +76,10 @@
   </swiper-container>
 
   <!-- botao -->
-  <ion-button color="button-background" class="botaoNovidades"
+  <ion-button
+    [routerLink]="['/produtos']"
+    color="button-background"
+    class="botaoNovidades"
     >Ver todos os Lançamentos</ion-button
   >
 
@@ -138,20 +143,6 @@
       />
     </swiper-slide>
   </swiper-container>
-  <ion-buttons class="botoesMarca">
-    <ion-button
-      ><img
-        class="botaoInteracao"
-        src="../../assets/icon/Icone-Botao-Esquerda.png"
-        alt=""
-    /></ion-button>
-    <ion-button
-      ><img
-        class="botaoInteracao"
-        src="../../assets/icon/Icone-Botao-Direita.png"
-        alt=""
-    /></ion-button>
-  </ion-buttons>
 
   <!-- Categorias -->
   <section class="card-section">

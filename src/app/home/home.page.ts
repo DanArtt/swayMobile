@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,11 +21,33 @@ export class HomePage implements AfterViewInit {
       }
     }, 100); // espera um pouco para garantir que tudo esteja renderizado
   }
-  constructor(private menu: MenuController) {}
+
+  constructor(
+    private menu: MenuController,
+    private loadingController: LoadingController,
+    private router: Router
+  ) {}
+  //Looding da pagina principal para Produtos
+  async homeParaProdutos() {
+    const loading = await this.loadingController.create({
+      message: 'Carregando...',
+      spinner: 'crescent',
+      duration: 1700, // ou remova para fechar manualmente
+      cssClass: 'custom-loading',
+    });
+
+    await loading.present();
+
+    setTimeout(() => {
+      this.router.navigate(['/produtos']);
+    }, 500); // tempo para o loading aparecer antes da navegação
+  }
+
   openMenu() {
     this.menu.enable(true, 'mainMenu');
     this.menu.open('mainMenu');
   }
+
   //Visualização dos produtos
   produtos = [
     {

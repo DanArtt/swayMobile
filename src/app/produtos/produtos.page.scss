@@ -2,6 +2,10 @@
   padding: 10px;
 }
 
+.fundo-pagina {
+  background: #fcfcfc;
+}
+
 .imgMenu {
   height: 20px;
   width: 25px;
@@ -64,12 +68,61 @@
   height: auto;
 }
 
+.ordenacao-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; // <- isso centraliza horizontalmente
+  gap: 35px;
+  margin: 15px 0;
+  margin-top: 130px;
+}
+
+.ordemAlfabetica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.botaoOrdem {
+  --background: #000;
+  font-size: 14px;
+  height: 45px;
+  font-weight: 300;
+  --border-radius: 25px;
+  --box-shadow: none;
+  text-transform: none !important;
+}
+
+.botaoOrdem:active {
+  transform: scale(0.95);
+}
+
+//Animação das imagens de produtos
+.fade-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
 // Grid com espaçamento reduzido
 .custom-grid,
 .custom-row {
   --ion-grid-padding: 4px;
   --ion-grid-column-padding: 4px;
-  margin-top: 50px;
 }
 
 ion-col {
@@ -151,7 +204,7 @@ ion-col {
   }
 
   .buy-button {
-    --background: #333;
+    --background: #000000;
     --background-hover: #555;
     --border-radius: 20px;
     --padding-top: 6px;
@@ -160,4 +213,8 @@ ion-col {
     width: 90%;
     align-self: center;
   }
+}
+
+.buy-button:active {
+  transform: scale(0.95);
 }

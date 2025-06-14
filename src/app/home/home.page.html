@@ -24,8 +24,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-img src="assets/background-Navbar.png" class="imgFundo"></ion-img>
+<ion-content class="fundo-pagina">
+  <ion-img src="../../assets/background-Navbar.png" class="imgFundo"></ion-img>
   <!-- Slogan -->
   <div class="conteudoSlogan">
     <ion-img src="assets/slogan.png" class="imgSlogan"></ion-img>
@@ -77,7 +77,7 @@
 
   <!-- botao -->
   <ion-button
-    [routerLink]="['/produtos']"
+    (click)="homeParaProdutos()"
     color="button-background"
     class="botaoNovidades"
     >Ver todos os Lançamentos</ion-button

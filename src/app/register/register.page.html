@@ -13,7 +13,7 @@
   <div class="card">
     <!-- Botão de voltar -->
     <div class="cad-cabecalho">
-      <button class="back-btn" [routerLink]="['/home']">
+      <button class="back-btn" (click)="registerParaHome()">
         <img src="../../assets/Seta.png" alt="" />
       </button>
       <h2 class="text">Crie sua Conta</h2>
@@ -75,6 +75,32 @@
     ></ion-input>
 
     <!-- Senha -->
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Senha"
+      labelPlacement="floating"
+      helperText="Crie uma senha (mínimo 6 caracteres)"
+      errorText="Senha Inválida"
+      name="senha"
+      required
+      maxlength="12"
+      ngModel
+      senha
+    ></ion-input>
+    <ion-input
+      type="password"
+      fill="solid"
+      label="Senha"
+      labelPlacement="floating"
+      helperText="Crie uma senha (mínimo 6 caracteres)"
+      errorText="Senha Inválida"
+      name="senha"
+      required
+      maxlength="12"
+      ngModel
+      senha
+    ></ion-input>
     <ion-input
       type="password"
       fill="solid"

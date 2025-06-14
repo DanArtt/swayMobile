@@ -4,6 +4,10 @@
   padding: 10px;
 }
 
+.fundo-pagina {
+  background: #fff;
+}
+
 .imgMenu {
   height: 20px;
   width: 25px;
@@ -127,8 +131,6 @@ ion-searchbar {
     height: 60px;
   }
 }
-
-
 
 //Estilização das Categorias
 .card-section {
@@ -621,4 +623,10 @@ ion-col {
       background-color: #000;
     }
   }
+}
+
+.custom-loading {
+  --background: rgba(0, 0, 0, 0.8);
+  --spinner-color: white;
+  color: white;
 }

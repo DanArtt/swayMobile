@@ -4,7 +4,7 @@
       <ion-button fill="clear" (click)="openMenu()">
         <ion-img src="assets/icon/Icone-Mais.png" class="imgMenu"></ion-img>
       </ion-button>
-      <a [routerLink]="['/home']">
+      <a (click)="produtosParaHome()">
         <ion-img src="assets/LogoBranca.png" class="logoSway"></ion-img>
       </a>
     </ion-buttons>
@@ -23,18 +23,37 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="fundo-pagina">
   <ion-img src="assets/background-Navbar.png" class="imgFundo"></ion-img>
   <!-- Slogan -->
   <div class="conteudoSlogan">
     <ion-img src="assets/slogan.png" class="imgSlogan"></ion-img>
   </div>
 
+  <div class="ordenacao-container">
+    <div class="ordemAlfabetica">
+      <ion-checkbox
+        [(ngModel)]="ordenarPorNome"
+        (ionChange)="ordenarProdutos()"
+      >
+      </ion-checkbox>
+      <ion-label>Ordem Alfabética</ion-label>
+    </div>
+
+    <ion-button class="botaoOrdem" (click)="abrirModalOrdenacao()">
+      Ordenar por Preço
+    </ion-button>
+  </div>
+
   <ion-grid class="custom-grid">
     <ion-row class="custom-row">
       <ion-col size="6" size-md="4" *ngFor="let produto of produtos">
         <ion-card class="product-card">
-          <ion-img [src]="produto.imagem"></ion-img>
+          <ion-img
+            [src]="produto.imagemAtual"
+            class="fade-img"
+            (click)="trocarImagem($event, produto)"
+          ></ion-img>
 
           <ion-card-content>
             <div class="rating">

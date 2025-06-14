@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class LoginPage implements OnInit {
+  constructor(
+    private loadingController: LoadingController,
+    private router: Router
+  ) {}
 
-  constructor() { }
+  //Looding da pagina Login para Home
+  async loginParaHome() {
+    const loading = await this.loadingController.create({
+      message: 'Carregando...',
+      spinner: 'crescent',
+      duration: 1700,
+      cssClass: 'custom-loading',
+    });
 
-  ngOnInit() {
+    await loading.present();
+
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 500);
   }
 
+  ngOnInit() {}
 }

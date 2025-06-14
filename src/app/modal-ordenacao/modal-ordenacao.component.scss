@@ -1,0 +1,15 @@
+.botaoDoPreço {
+  --background: #000;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+  height: 45px;
+  color: #ffffff;
+  --border-radius: 25px;
+  --box-shadow: none;
+  text-transform: none !important;
+}
+
+.botaoDoPreço:active {
+  transform: scale(0.95);
+}

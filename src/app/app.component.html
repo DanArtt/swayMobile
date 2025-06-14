@@ -6,12 +6,25 @@
     type="reveal"
   >
     <ion-content class="full-screen-menu">
+      <!-- Parte do login e cadastrar já com as rotas -->
+      <div class="profile-container">
+        <img class="profile-image" src="../assets/icon/profile.png" alt="" />
+        <div class="profile-info">
+          <p>
+            <a class="ancora" (click)="navigateTo('/login')">Entre</a> ou
+            <a class="ancora" (click)="navigateTo('/register')">Cadastre-se</a>
+            <span class="subtext"><br />Seus Pedidos, Favoritos...</span>
+          </p>
+        </div>
+      </div>
       <div class="menu-container">
-        <img src="../../assets/LogoBranca.png" class="logo-menu" />
-
         <ion-button (click)="closeMenu()" class="close-btn" fill="clear">
           <ion-icon slot="icon-only" name="close-outline"></ion-icon>
         </ion-button>
+
+        <div class="container-text">
+          <ion-text class="text-categoria">Navegue por Categorias</ion-text>
+        </div>
 
         <ion-list class="menu-list">
           <ion-item
@@ -20,7 +33,7 @@
             (click)="toggleMenu(0)"
             [class.expanded]="expanded[0]"
           >
-            Camisetas
+            Vestuário
             <ion-icon
               [name]="
                 expanded[0] ? 'chevron-up-outline' : 'chevron-down-outline'
@@ -29,8 +42,9 @@
             ></ion-icon>
           </ion-item>
           <div *ngIf="expanded[0]" class="submenu">
-            <ion-item lines="none">Oversized</ion-item>
-            <ion-item lines="none">Estampadas</ion-item>
+            <ion-item lines="none">Camisetas</ion-item>
+            <ion-item lines="none">Bermudas</ion-item>
+            <ion-item lines="none">Acessórios</ion-item>
           </div>
 
           <ion-item
@@ -39,7 +53,7 @@
             (click)="toggleMenu(1)"
             [class.expanded]="expanded[1]"
           >
-            Bermudas
+            Masculino
             <ion-icon
               [name]="
                 expanded[1] ? 'chevron-up-outline' : 'chevron-down-outline'
@@ -48,8 +62,9 @@
             ></ion-icon>
           </ion-item>
           <div *ngIf="expanded[1]" class="submenu">
-            <ion-item lines="none">Moletom</ion-item>
-            <ion-item lines="none">Jeans</ion-item>
+            <ion-item lines="none">Camisetas</ion-item>
+            <ion-item lines="none">Bermudas</ion-item>
+            <ion-item lines="none">Acessórios</ion-item>
           </div>
 
           <ion-item
@@ -58,7 +73,7 @@
             (click)="toggleMenu(2)"
             [class.expanded]="expanded[2]"
           >
-            Calças
+            Feminino
             <ion-icon
               [name]="
                 expanded[2] ? 'chevron-up-outline' : 'chevron-down-outline'
@@ -67,32 +82,14 @@
             ></ion-icon>
           </ion-item>
           <div *ngIf="expanded[2]" class="submenu">
-            <ion-item lines="none">Cargo</ion-item>
-            <ion-item lines="none">Wide Leg</ion-item>
-          </div>
-
-          <ion-item
-            lines="none"
-            detail="false"
-            (click)="toggleMenu(3)"
-            [class.expanded]="expanded[3]"
-          >
-            Acessórios
-            <ion-icon
-              [name]="
-                expanded[3] ? 'chevron-up-outline' : 'chevron-down-outline'
-              "
-              slot="end"
-            ></ion-icon>
-          </ion-item>
-          <div *ngIf="expanded[3]" class="submenu">
-            <ion-item lines="none">Bonés</ion-item>
-            <ion-item lines="none">Óculos</ion-item>
+            <ion-item lines="none">Blusas</ion-item>
+            <ion-item lines="none">Shorts</ion-item>
+            <ion-item lines="none">Acessórios</ion-item>
           </div>
         </ion-list>
       </div>
       <!-- Parte do login e cadastrar já com as rotas -->
-      <div class="auth-actions">
+      <!--       <div class="auth-actions">
         <button class="btn-entrar" (click)="navigateTo('/login')">
           Entrar
         </button>
@@ -100,6 +97,10 @@
           Ainda não possui uma conta?<br />
           <a (click)="navigateTo('/register')">Cadastre-se</a>
         </div>
+      </div> -->
+      <div class="footer-menu">
+        <p class="lema">Designer e Tecnologia</p>
+        <img src="../../assets/LogoBranca.png" class="logo-menu" />
       </div>
     </ion-content>
   </ion-menu>

@@ -45,6 +45,16 @@ ion-content {
   --background: transparent !important;
 }
 
+.custom-loading {
+  --background: rgba(0, 0, 0, 0.8);
+  --spinner-color: white;
+  color: white;
+}
+
+.meu-modal-sheet {
+  --border-radius: 16px 16px 0 0;
+}
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------

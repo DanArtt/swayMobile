@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Meu Carrinho</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fechar()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of itens; let i = index">
+      <!-- IMAGEM AO LADO -->
+      <ion-thumbnail slot="start">
+        <img class="imageProduto" [src]="item.imagem" alt="{{ item.nome }}" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ item.nome }}</h2>
+        <p>R$ {{ item.preco.toFixed(2) }} x {{ item.quantidade }}</p>
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button
+          (click)="decrementarQuantidade(i)"
+          fill="clear"
+          color="medium"
+        >
+          <ion-icon name="remove-outline"></ion-icon>
+        </ion-button>
+        <ion-button
+          (click)="incrementarQuantidade(i)"
+          fill="clear"
+          color="medium"
+        >
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="removerItem(i)" fill="clear" color="danger">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <ion-item lines="none">
+    <ion-label><strong>Total:</strong></ion-label>
+    <ion-note slot="end">
+      <strong>R$ {{ total.toFixed(2) }}</strong>
+    </ion-note>
+  </ion-item>
+</ion-content>
+
+<!-- BOTÃO DE COMPRA -->
+<ion-footer *ngIf="itens.length > 0" class="ion-padding">
+  <ion-button expand="block" color="success" (click)="finalizarCompra()">
+    Finalizar Compra
+  </ion-button>
+</ion-footer>

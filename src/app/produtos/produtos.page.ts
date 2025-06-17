@@ -6,7 +6,9 @@ import {
 } from '@ionic/angular';
 import { ProdutoService } from './produtos.service';
 import { Router } from '@angular/router';
-import { ModalOrdenacaoComponent } from '../modal-ordenacao/modal-ordenacao.component'; // Modal de ordenação
+import { ModalOrdenacaoComponent } from '../components/modal-ordenacao/modal-ordenacao.component';
+import { CarrinhoComponent } from '../components/carrinho/carrinho.component';
+import { CarrinhoService } from '../services/carrinho.service';
 
 @Component({
   selector: 'app-produtos',
@@ -15,20 +17,23 @@ import { ModalOrdenacaoComponent } from '../modal-ordenacao/modal-ordenacao.comp
   standalone: false,
 })
 export class ProdutosPage implements OnInit {
-  produtos: any[] = []; // Lista de produtos a ser exibida
-  produtosOriginais: any[] = []; // Cópia da lista original (para resetar)
+  produtos: any[] = [];
+  produtosOriginais: any[] = [];
   activeGroup = 0;
-  ordenarPorNome = false; // Controle do checkbox "ordenar por nome"
+  ordenarPorNome = false;
+  totalItensCarrinho: number = 0; // contador do carrinho
 
   constructor(
     private menu: MenuController,
     private produtoService: ProdutoService,
     private loadingController: LoadingController,
     private router: Router,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private carrinhoService: CarrinhoService
   ) {}
 
-  // Botão com loading que volta para a página Home
+  // Método para redirecionar para a página inicial
+  // e exibir um loading personalizado
   async produtosParaHome() {
     const loading = await this.loadingController.create({
       message: 'Carregando...',
@@ -44,7 +49,6 @@ export class ProdutosPage implements OnInit {
     }, 500);
   }
 
-  // Ao iniciar a página, carrega produtos do serviço
   ngOnInit() {
     this.menu.enable(true, 'mainMenu');
 
@@ -56,7 +60,12 @@ export class ProdutosPage implements OnInit {
       }));
 
       this.produtos = [...produtosPreparados];
-      this.produtosOriginais = [...produtosPreparados]; // Salva cópia original
+      this.produtosOriginais = [...produtosPreparados];
+    });
+
+    // Atualiza contador do carrinho em tempo real
+    this.carrinhoService.totalItens$.subscribe((quantidade) => {
+      this.totalItensCarrinho = quantidade;
     });
   }
 
@@ -69,7 +78,6 @@ export class ProdutosPage implements OnInit {
     this.activeGroup = index;
   }
 
-  // Troca imagem do produto (hover/click)
   trocarImagem(event: any, produto: any) {
     const imgElement = event.target as HTMLImageElement;
 
@@ -92,16 +100,29 @@ export class ProdutosPage implements OnInit {
     }
   }
 
-  // Checkbox: ordena por nome A-Z ou reseta
+  adicionarAoCarrinho(produto: any) {
+    this.carrinhoService.adicionarProduto(produto);
+  }
+
   ordenarProdutos() {
     if (this.ordenarPorNome) {
       this.produtos.sort((a, b) => a.nome.localeCompare(b.nome));
     } else {
-      this.produtos = [...this.produtosOriginais]; // Restaura original
+      this.produtos = [...this.produtosOriginais];
     }
   }
 
-  // Abre modal de ordenação por preço (↑ ↓ ou resetar)
+  async abrirCarrinho() {
+    const modal = await this.modalCtrl.create({
+      component: CarrinhoComponent,
+      cssClass: 'carrinho-modal',
+      backdropDismiss: true,
+      showBackdrop: true,
+      animated: true,
+    });
+    await modal.present();
+  }
+
   async abrirModalOrdenacao() {
     const modal = await this.modalCtrl.create({
       component: ModalOrdenacaoComponent,

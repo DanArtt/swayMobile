@@ -1,0 +1,20 @@
+ion-toolbar {
+  --background: #000000;
+  --color: #ffffff;
+}
+
+ion-thumbnail {
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-thumbnail img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain; /* Ajusta a imagem toda, sem cortar */
+  border-radius: 4px;
+  display: block;
+}

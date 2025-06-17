@@ -48,11 +48,39 @@ ion-content {
 .custom-loading {
   --background: rgba(0, 0, 0, 0.8);
   --spinner-color: white;
+  --border-radius: 25px;
   color: white;
 }
 
 .meu-modal-sheet {
   --border-radius: 16px 16px 0 0;
+}
+
+ion-modal.carrinho-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+ion-modal.carrinho-modal::part(content) {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 85vw;
+  height: 100%;
+  background: var(--ion-background-color, #fff);
+  border-radius: 0;
+  animation: slideInRight 0.3s ease-out forwards;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 /**

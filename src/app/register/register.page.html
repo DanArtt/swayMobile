@@ -18,6 +18,7 @@
       </button>
       <h2 class="text">Crie sua Conta</h2>
     </div>
+
     <!-- Nome -->
     <ion-input
       type="text"
@@ -26,11 +27,10 @@
       labelPlacement="floating"
       helperText="Digite seu nome completo"
       errorText="Nome é Obrigatório"
+      [(ngModel)]="nome"
       name="nome"
-      ngModel
-      name
-      minlength="15"
-      maxLength="60"
+      minlength="3"
+      maxlength="60"
       required
     ></ion-input>
 
@@ -42,9 +42,8 @@
       labelPlacement="floating"
       helperText="Selecione sua data de nascimento"
       errorText="Data Inválida"
+      [(ngModel)]="dataNascimento"
       name="dataNascimento"
-      ngModel
-      date
       required
     ></ion-input>
 
@@ -56,9 +55,8 @@
       labelPlacement="floating"
       helperText="Digite seu CPF (somente números)"
       errorText="CPF Inválido"
+      [(ngModel)]="cpf"
       name="cpf"
-      ngModel
-      cpf
       required
     ></ion-input>
 
@@ -70,8 +68,9 @@
       labelPlacement="floating"
       helperText="Digite um E-mail Válido"
       errorText="E-mail Inválido"
-      ngModel
-      email
+      [(ngModel)]="email"
+      name="email"
+      required
     ></ion-input>
 
     <!-- Senha -->
@@ -82,37 +81,10 @@
       labelPlacement="floating"
       helperText="Crie uma senha (mínimo 6 caracteres)"
       errorText="Senha Inválida"
+      [(ngModel)]="senha"
       name="senha"
       required
       maxlength="12"
-      ngModel
-      senha
-    ></ion-input>
-    <ion-input
-      type="password"
-      fill="solid"
-      label="Senha"
-      labelPlacement="floating"
-      helperText="Crie uma senha (mínimo 6 caracteres)"
-      errorText="Senha Inválida"
-      name="senha"
-      required
-      maxlength="12"
-      ngModel
-      senha
-    ></ion-input>
-    <ion-input
-      type="password"
-      fill="solid"
-      label="Senha"
-      labelPlacement="floating"
-      helperText="Crie uma senha (mínimo 6 caracteres)"
-      errorText="Senha Inválida"
-      name="senha"
-      required
-      maxlength="12"
-      ngModel
-      senha
     ></ion-input>
 
     <!-- Confirmar Senha -->
@@ -123,13 +95,12 @@
       labelPlacement="floating"
       helperText="Repita a senha"
       errorText="As Senhas Não Coincidem"
+      [(ngModel)]="confirmarSenha"
       name="confirmarSenha"
       required
       maxlength="12"
-      ngModel
-      confirmarSenha
     ></ion-input>
 
-    <button class="entrar-btn">Criar Conta.</button>
+    <button class="entrar-btn" (click)="register()">Criar Conta.</button>
   </div>
 </div>

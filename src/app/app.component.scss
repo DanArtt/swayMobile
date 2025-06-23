@@ -6,6 +6,13 @@
   position: relative;
 }
 
+.logout-btn {
+  --background: #000;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  --border-radius: 25px;
+}
+
 .container-text {
   width: 100%;
 }
@@ -173,4 +180,8 @@
   font-size: 14px;
   color: #414141;
   font-weight: 300;
+}
+
+.emailclass {
+  font-size: 13px;
 }

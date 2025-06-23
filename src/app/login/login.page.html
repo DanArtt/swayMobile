@@ -27,8 +27,9 @@
       labelPlacement="floating"
       helperText="Digite um E-mail Válido"
       errorText="E-mail Inválido"
-      ngModel
-      email
+      [(ngModel)]="email"
+      name="email"
+      required
     ></ion-input>
 
     <!-- Senha -->
@@ -37,16 +38,14 @@
       fill="solid"
       label="Senha"
       labelPlacement="floating"
-      helperText="Crie uma senha (mínimo 6 caracteres)"
+      helperText="Sua senha"
       errorText="Senha Inválida"
+      [(ngModel)]="senha"
       name="senha"
       required
-      maxlength="12"
-      ngModel
-      senha
     ></ion-input>
 
-    <button class="entrar-btn">Entrar</button>
+    <button class="entrar-btn" (click)="login()">Entrar</button>
 
     <p class="link">
       Esqueceu sua Senha ?<br />

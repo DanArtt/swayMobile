@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { MenuController } from '@ionic/angular';
-import { Router } from '@angular/router'; // IMPORTANTE
+import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 register();
 
@@ -11,10 +12,21 @@ register();
   styleUrls: ['app.component.scss'],
   standalone: false,
 })
-export class AppComponent {
-  expanded: boolean[] = [false, false, false, false];
+export class AppComponent implements OnInit {
+  expanded: boolean[] = [false, false, false];
+  usuarioEmail: string | null = null;
 
-  constructor(private menu: MenuController, private router: Router) {}
+  constructor(
+    private menu: MenuController,
+    private router: Router,
+    private authService: AuthService
+  ) {}
+
+  ngOnInit() {
+    this.authService.getAuthState().subscribe((user) => {
+      this.usuarioEmail = user ? user.email : null;
+    });
+  }
 
   closeMenu() {
     this.menu.close('mainMenu');
@@ -26,6 +38,14 @@ export class AppComponent {
 
   navigateTo(path: string) {
     this.router.navigateByUrl(path);
-    this.menu.close('mainMenu'); // Fecha o menu após navegar
+    this.menu.close('mainMenu');
+  }
+
+  logout() {
+    this.authService.logout().then(() => {
+      this.usuarioEmail = null;
+      this.router.navigate(['/login']);
+      this.menu.close('mainMenu');
+    });
   }
 }

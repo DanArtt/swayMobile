@@ -6,17 +6,37 @@
     type="reveal"
   >
     <ion-content class="full-screen-menu">
-      <!-- Parte do login e cadastrar já com as rotas -->
+      <!-- Área do usuário logado ou links de login -->
       <div class="profile-container">
-        <img class="profile-image" src="../assets/icon/profile.png" alt="" />
+        <img
+          class="profile-image"
+          src="../assets/icon/profile.png"
+          alt="Ícone de perfil"
+        />
         <div class="profile-info">
-          <p>
+          <p class="emailclass" *ngIf="usuarioEmail; else loginLinks">
+            Olá, <strong>{{ usuarioEmail }}</strong
+            ><br />
+            <span class="subtext">Seus Pedidos, Favoritos...</span>
+          </p>
+          <ng-template #loginLinks>
             <a class="ancora" (click)="navigateTo('/login')">Entre</a> ou
             <a class="ancora" (click)="navigateTo('/register')">Cadastre-se</a>
             <span class="subtext"><br />Seus Pedidos, Favoritos...</span>
-          </p>
+          </ng-template>
+
+          <!-- Botão de logout (visível apenas se logado) -->
+          <ion-button
+            *ngIf="usuarioEmail"
+            (click)="logout()"
+            expand="block"
+            class="logout-btn"
+          >
+            Sair da Conta
+          </ion-button>
         </div>
       </div>
+
       <div class="menu-container">
         <ion-button (click)="closeMenu()" class="close-btn" fill="clear">
           <ion-icon slot="icon-only" name="close-outline"></ion-icon>
@@ -27,6 +47,7 @@
         </div>
 
         <ion-list class="menu-list">
+          <!-- Vestuário -->
           <ion-item
             lines="none"
             detail="false"
@@ -47,6 +68,7 @@
             <ion-item lines="none">Acessórios</ion-item>
           </div>
 
+          <!-- Masculino -->
           <ion-item
             lines="none"
             detail="false"
@@ -67,6 +89,7 @@
             <ion-item lines="none">Acessórios</ion-item>
           </div>
 
+          <!-- Feminino -->
           <ion-item
             lines="none"
             detail="false"
@@ -88,16 +111,8 @@
           </div>
         </ion-list>
       </div>
-      <!-- Parte do login e cadastrar já com as rotas -->
-      <!--       <div class="auth-actions">
-        <button class="btn-entrar" (click)="navigateTo('/login')">
-          Entrar
-        </button>
-        <div class="register-link">
-          Ainda não possui uma conta?<br />
-          <a (click)="navigateTo('/register')">Cadastre-se</a>
-        </div>
-      </div> -->
+
+      <!-- Rodapé -->
       <div class="footer-menu">
         <p class="lema">Designer e Tecnologia</p>
         <img src="../../assets/LogoBranca.png" class="logo-menu" />

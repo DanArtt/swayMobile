@@ -52,4 +52,33 @@ export class LoginPage implements OnInit {
         toast.present();
       });
   }
+
+  async forgotPassword() {
+    if (!this.email) {
+      const toast = await this.toastController.create({
+        message: 'Por favor, digite seu e-mail antes.',
+        duration: 3000,
+        color: 'warning',
+      });
+      await toast.present();
+      return;
+    }
+
+    try {
+      await this.authService.resetPassword(this.email);
+      const toast = await this.toastController.create({
+        message: 'E-mail de redefinição enviado com sucesso!',
+        duration: 3000,
+        color: 'success',
+      });
+      await toast.present();
+    } catch (error) {
+      const toast = await this.toastController.create({
+        message: 'Erro ao enviar e-mail: ' + (error as any).message,
+        duration: 3000,
+        color: 'danger',
+      });
+      await toast.present();
+    }
+  }
 }

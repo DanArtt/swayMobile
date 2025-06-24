@@ -26,4 +26,9 @@ export class AuthService {
   getAuthState() {
     return this.afAuth.authState;
   }
+
+  // 🔁 Redefinir senha por email
+  resetPassword(email: string) {
+    return this.afAuth.sendPasswordResetEmail(email);
+  }
 }

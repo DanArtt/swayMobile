@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    FormsModule, 
+    FormsModule,
 
     // Firebase inicialização
     AngularFireModule.initializeApp(environment.firebaseConfig),

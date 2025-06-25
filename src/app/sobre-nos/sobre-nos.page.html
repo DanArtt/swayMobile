@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar class="toolbar-background">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="openMenu()">
+        <ion-img src="assets/icon/Icone-Mais.png" class="imgMenu"></ion-img>
+      </ion-button>
+      <a [routerLink]="['/home']">
+        <ion-img src="assets/LogoBranca.png" class="logoSway"></ion-img>
+      </a>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="botaoCompras" (click)="abrirCarrinho()">
+        <div class="carrinho">
+          <ion-img
+            src="assets/icon/Icone-Carrinho.png"
+            class="imgSacola"
+          ></ion-img>
+          <div class="badge">{{ totalItensCarrinho }}</div>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fade-in-home" class="fundo-pagina">
+  <ion-img src="../../assets/background-Navbar.png" class="imgFundo"></ion-img>
+  <!-- Slogan -->
+  <div class="conteudoSlogan">
+    <ion-img src="assets/slogan.png" class="imgSlogan"></ion-img>
+  </div>
+
+  <div class="membros-grid">
+    <ion-card *ngFor="let membro of membros">
+      <img [src]="membro.foto" alt="Foto de {{ membro.nome }}" />
+      <ion-card-header>
+        <ion-card-title>{{ membro.nome }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="descricao">{{ membro.descricao }}</p>
+        <p class="contribuicao">{{ membro.contribuicao }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

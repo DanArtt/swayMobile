@@ -1,0 +1,114 @@
+//////////////////////////////////////////////////////
+///
+/// //Styles da NavBar
+
+.toolbar-background {
+  padding: 10px;
+}
+
+ion-toolbar {
+  --background: #000000;
+}
+
+.fundo-pagina {
+  background: var(--ion-background-color, #ffffff);
+}
+
+.imgMenu {
+  height: 20px;
+  width: 25px;
+  margin-top: 25px;
+}
+
+.logoSway {
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 25px;
+}
+
+.botaoCompras {
+  position: relative;
+  right: 8px;
+  margin-top: 25px;
+}
+
+.imgSacola {
+  height: 20px;
+  width: 20px;
+}
+
+/* Badge do contador da loja */
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+//Conteudo Abaixo da NavBar
+.imgFundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.conteudoSlogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.imgSlogan {
+  max-width: 90%;
+  height: auto;
+}
+
+.membros-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 120px;
+}
+
+ion-card {
+  width: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px;
+  text-align: center;
+}
+
+ion-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+ion-card-title {
+  color: var(--text, #333);
+}
+
+.descricao {
+  font-style: italic;
+  color: var(--text, #666);
+  margin-bottom: 8px;
+}
+
+.contribuicao {
+  font-size: 0.95rem;
+  color: var(--text, #666);
+}

@@ -7,6 +7,7 @@ import {
 import { Router } from '@angular/router';
 import { CarrinhoComponent } from '../components/carrinho/carrinho.component';
 import { CarrinhoService } from '../services/carrinho.service';
+import { ThemeService } from '../services/theme.service'; // ⬅️ Importado
 
 @Component({
   selector: 'app-home',
@@ -53,7 +54,8 @@ export class HomePage implements AfterViewInit {
     private loadingController: LoadingController,
     private router: Router,
     private modalCtrl: ModalController,
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    private themeService: ThemeService // ⬅️ Injetado
   ) {}
 
   ngAfterViewInit() {
@@ -67,6 +69,9 @@ export class HomePage implements AfterViewInit {
     this.carrinhoService.totalItens$.subscribe((quantidade) => {
       this.totalItensCarrinho = quantidade;
     });
+
+    // Aplica o tema ao entrar na tela
+    this.themeService.initTheme();
   }
 
   openMenu() {

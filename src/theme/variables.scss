@@ -1,6 +1,115 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+/* Modo Claro (padrão) */
 :root {
-  --ion-toolbar-background: #030303;
-  --ion-button-background: #030303;
+  --ion-text-color: #ffffff;
+  --ion-toolbar-background: #000000;
+  --ion-card-background: #000000;
+
+  --searchbar-background: #bbbbbb;
+  --footer-background: #f0f0f0;
+
+  /* Variáveis específicas para o botão de compra */
+  --buy-button-bg: #000000; /* botão preto */
+  --buy-button-text: #ffffff; /* texto branco */
+
+  //Menu de opões acima do footer
+  --feature-icon-color: #333;
+  --feature-title-color: #333;
+  --feature-description-color: #666;
+
+  --slider-dot-border-color: #000;
+  --slider-dot-active-color: #000;
+
+  //Modo claro do Side menu
+  --menu-background: #d9d9d9;
+  --menu-footer-background: #c5c5c5;
+  --menu-category-background: #c5c5c5;
+
+  --menu-text-color: #000000;
+  --menu-subtext-color: #414141;
+  --menu-border-color: rgba(0, 0, 0, 0.15);
+  --submenu-border-color: rgba(0, 0, 0, 0.08);
+  --submenu-hover-bg: rgba(0, 0, 0, 0.05);
+
+  --profile-border-color: #000000;
+  --auth-button-bg: #000000;
+  --auth-button-text: #ffffff;
+  --auth-link-color: #000000;
+  --anchor-color: #000000;
+  --anchor-underline-color: black;
+
+  --close-btn-color: #000000;
+  --toggle-label-color: #000000;
+  --toggle-border-color: #b3b3b3;
+  --toggle-handle-bg: #ffffff;
+  --toggle-track-bg: #c5c5c5;
+
+  //modal preço light mode
+  --botao-darkmode-bg: #000000;
+  --botao-darkmode-text: #ffffff;
+}
+
+/* Modo Escuro */
+body.dark {
+  --ion-background-color: #202020;
+  --ion-text-color: #000000;
+  --ion-toolbar-background: #000000;
+  --ion-card-background: #1f1f1f;
+  --ion-button-background: #ffffff;
+
+  --star-color: #ffff00;
+  --text: #ffffff;
+  --price: #d1d1d1;
+
+  --searchbar-background: #2a2a2a;
+  --footer-background: #1a1a1a;
+
+  /* Botão de compra invertido no dark mode */
+  --buy-button-bg: #ffffff; /* botão branco */
+  --buy-button-text: #000000; /* texto preto */
+
+  //Menu de opões acima do footer
+  --feature-icon-color: #ffffff;
+  --feature-title-color: #ffffff;
+  --feature-description-color: #cccccc;
+
+  --slider-dot-border-color: #ffffff;
+  --slider-dot-active-color: #ffffff;
+
+  //Modo escuro do Side menu
+  --menu-background: #1f1f1f;
+  --menu-darkmode-background: #2a2a2a;
+  --menu-footer-background: #2a2a2a;
+  --menu-category-background: #2a2a2a;
+
+  --menu-text-color: #ffffff;
+  --menu-subtext-color: #cccccc;
+  --menu-border-color: rgba(255, 255, 255, 0.15);
+  --submenu-border-color: rgba(255, 255, 255, 0.08);
+  --submenu-hover-bg: rgba(255, 255, 255, 0.05);
+
+  --profile-border-color: #ffffff;
+  --auth-button-bg: #ffffff;
+  --auth-button-text: #000000;
+  --auth-link-color: #ffffff;
+  --anchor-color: #ffffff;
+  --anchor-underline-color: white;
+
+  --close-btn-color: #ffffff;
+  --toggle-label-color: #ffffff;
+  --toggle-border-color: #333333;
+  --toggle-handle-bg: #000000;
+  --toggle-track-bg: #666666;
+  --ion-color: #ffffff;
+
+  //carrinho de compras darkmode
+  --excluir-produto-color: #ff0000;
+  --icone-em-geral: #ffffff;
+
+  //modal preço
+  --texto-dakmode: #ffffff;
+  --botao-darkmode: #ffffff;
+  --texto-botao: #000000;
+  --botao-darkmode-bg: #ffffff;
+  --botao-darkmode-text: #000000;
+  --color-card: #00000076;
 }

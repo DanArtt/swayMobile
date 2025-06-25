@@ -3,7 +3,7 @@
     <ion-title class="textCarrinho">Meu Carrinho</ion-title>
     <ion-buttons slot="end">
       <ion-button class="botaoFecharCarrinho" (click)="fechar()">
-        <ion-icon name="close-outline"></ion-icon>
+        <ion-icon class="iconeFecharCarrinho" name="close-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -18,8 +18,10 @@
       </ion-thumbnail>
 
       <ion-label>
-        <h2>{{ item.nome }}</h2>
-        <p>R$ {{ item.preco.toFixed(2) }} x {{ item.quantidade }}</p>
+        <h2 class="nomeProduto">{{ item.nome }}</h2>
+        <p class="precoProduto">
+          R$ {{ item.preco.toFixed(2) }} x {{ item.quantidade }}
+        </p>
       </ion-label>
 
       <ion-buttons slot="end">
@@ -28,26 +30,29 @@
           fill="clear"
           color="medium"
         >
-          <ion-icon name="remove-outline"></ion-icon>
+          <ion-icon class="iconeDecrementar" name="remove-outline"></ion-icon>
         </ion-button>
         <ion-button
           (click)="incrementarQuantidade(i)"
           fill="clear"
           color="medium"
         >
-          <ion-icon name="add-outline"></ion-icon>
+          <ion-icon class="iconeIncrementar" name="add-outline"></ion-icon>
         </ion-button>
         <ion-button (click)="removerItem(i)" fill="clear" color="danger">
-          <ion-icon name="trash-outline"></ion-icon>
+          <ion-icon
+            class="iconeRemoverCarrinho"
+            name="trash-outline"
+          ></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-item>
   </ion-list>
 
   <ion-item lines="none">
-    <ion-label><strong>Total:</strong></ion-label>
+    <ion-label class="totalDoValor"><strong>Total:</strong></ion-label>
     <ion-note slot="end">
-      <strong>R$ {{ total.toFixed(2) }}</strong>
+      <strong class="Valor">R$ {{ total.toFixed(2) }}</strong>
     </ion-note>
   </ion-item>
 </ion-content>

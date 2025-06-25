@@ -12,12 +12,15 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent, CarrinhoComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    FormsModule, 
 
     // Firebase inicialização
     AngularFireModule.initializeApp(environment.firebaseConfig),

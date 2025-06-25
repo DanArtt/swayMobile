@@ -10,6 +10,8 @@ import { ModalOrdenacaoComponent } from '../components/modal-ordenacao/modal-ord
 import { CarrinhoComponent } from '../components/carrinho/carrinho.component';
 import { CarrinhoService } from '../services/carrinho.service';
 
+import { ThemeService } from '../services/theme.service';
+
 @Component({
   selector: 'app-produtos',
   templateUrl: './produtos.page.html',
@@ -29,7 +31,8 @@ export class ProdutosPage implements OnInit {
     private loadingController: LoadingController,
     private router: Router,
     private modalCtrl: ModalController,
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    private themeService: ThemeService
   ) {}
 
   // Método para redirecionar para a página inicial
@@ -51,6 +54,7 @@ export class ProdutosPage implements OnInit {
 
   ngOnInit() {
     this.menu.enable(true, 'mainMenu');
+    this.themeService.initTheme();
 
     this.produtoService.getProdutos().subscribe((data) => {
       const produtosPreparados = data.map((produto) => ({

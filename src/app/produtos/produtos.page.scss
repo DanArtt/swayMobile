@@ -3,7 +3,7 @@
 }
 
 .fundo-pagina {
-  background: #fcfcfc;
+  background: var(--ion-background-color, #f5f5f5);
 }
 
 .imgMenu {
@@ -85,6 +85,10 @@
   font-size: 16px;
 }
 
+.textOrdem {
+  color: var(--texto-dakmode, #000000);
+}
+
 .checkbox-label {
   display: flex;
   align-items: center;
@@ -92,7 +96,8 @@
 }
 
 .botaoOrdem {
-  --background: #000;
+  --background: var(--botao-darkmode, #000000);
+  color: var(--texto-botao, #ffffff);
   font-size: 14px;
   height: 45px;
   font-weight: 300;
@@ -167,13 +172,19 @@ ion-col {
     margin: 6px 0;
 
     ion-icon {
-      color: #000000;
+      color: var(
+        --star-color,
+        #000000
+      ); /* usa variável, se não tiver, usa preto */
       font-size: 18px;
     }
 
     span {
       margin-left: 4px;
-      color: #333;
+      color: var(
+        --text,
+        #333
+      ); /* usa variável, se não tiver, usa cinza escuro */
       font-size: 14px;
     }
   }
@@ -181,7 +192,7 @@ ion-col {
   .product-title {
     font-size: 18px;
     font-weight: 600;
-    color: #333;
+    color: var(--text, #333);
     text-align: center;
 
     display: -webkit-box;
@@ -196,7 +207,7 @@ ion-col {
 
   .price {
     font-size: 15px;
-    color: #333;
+    color: var(--price, #333);
     margin: 4px 0;
     font-weight: 600;
     text-align: center;
@@ -204,17 +215,15 @@ ion-col {
   }
 
   .buy-button {
-    --background: #000000;
-    --background-hover: #555;
-    --border-radius: 20px;
-    --padding-top: 6px;
-    --padding-bottom: 8px;
+    background-color: var(--buy-button-bg);
+    color: var(--buy-button-text);
+    border-radius: 20px;
+    --box-shadow: none;
     margin-top: 8px;
     width: 90%;
     align-self: center;
   }
 }
-
 .buy-button:active {
   transform: scale(0.95);
 }

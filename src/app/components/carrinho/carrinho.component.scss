@@ -13,6 +13,10 @@ ion-toolbar {
   margin-bottom: 10px;
 }
 
+.iconeFecharCarrinho {
+  color: var(--ion-color);
+}
+
 ion-thumbnail {
   border-radius: 4px;
   overflow: hidden;
@@ -27,4 +31,49 @@ ion-thumbnail img {
   object-fit: contain; /* Ajusta a imagem toda, sem cortar */
   border-radius: 4px;
   display: block;
+}
+
+.nomeProduto {
+  font-weight: bold;
+  color: var(--text, #000000); // Já definido nas variáveis para modo escuro
+}
+
+.precoProduto {
+  font-size: 14px;
+  color: var(--price, #000000); // Adicionado para modo escuro
+}
+
+ion-note {
+  color: var(--ion-text-color, #000000);
+}
+
+ion-footer {
+  background: var(--footer-background);
+}
+
+ion-button {
+  --background: var(--buy-button-bg, #000000);
+  --color: var(--buy-button-text);
+}
+
+.iconeIncrementar,
+.iconeDecrementar {
+  color: var(--icone-em-geral);
+}
+
+.iconeRemoverCarrinho {
+  color: var(--excluir-produto-color);
+}
+
+ion-label {
+  color: var(--ion-text-color);
+}
+
+.totalDoValor {
+  color: var(--ion-color, #000000);
+}
+
+strong {
+  color: var(--ion-color, #000000);
+  font-size: 14px;
 }

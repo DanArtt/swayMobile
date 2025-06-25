@@ -1,13 +1,26 @@
-.botaoDoPreço {
-  --background: #000;
+.nome {
+  color: var(--texto-dakmode, #ffffff);
+}
+
+.botaoFecharModel {
+  color: var(--texto-dakmode, #ffffff);
+}
+
+.botaoDoPreco {
+  --background: var(--botao-darkmode-bg);
+  --color: var(--botao-darkmode-text);
+  --border-radius: 25px;
+  --box-shadow: none;
+  border-radius: 25px;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 20px;
   height: 45px;
-  color: #ffffff;
-  --border-radius: 25px;
-  --box-shadow: none;
   text-transform: none !important;
+}
+
+ion-button {
+  color: var(--texto-botao, #ffffff);
 }
 
 .botaoDoPreço:active {

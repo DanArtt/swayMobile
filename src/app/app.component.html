@@ -19,10 +19,16 @@
             ><br />
             <span class="subtext">Seus Pedidos, Favoritos...</span>
           </p>
-          <ng-template #loginLinks>
-            <a class="ancora" (click)="navigateTo('/login')">Entre</a> ou
-            <a class="ancora" (click)="navigateTo('/register')">Cadastre-se</a>
-            <span class="subtext"><br />Seus Pedidos, Favoritos...</span>
+          <ng-template class="loginEregistro" #loginLinks>
+            <div class="login-wrapper">
+              <span>
+                <a class="ancora" (click)="navigateTo('/login')">Entre</a> ou
+                <a class="ancora" (click)="navigateTo('/register')"
+                  >Cadastre-se</a
+                >
+              </span>
+              <span class="subtext">Seus Pedidos, Favoritos...</span>
+            </div>
           </ng-template>
 
           <!-- Botão de logout (visível apenas se logado) -->
@@ -36,6 +42,14 @@
           </ion-button>
         </div>
       </div>
+      <ion-item class="toggleDarkMode" lines="none">
+        <ion-icon [name]="darkModeIcon" slot="start"></ion-icon>
+        <ion-label>{{ darkModeLabel }}</ion-label>
+        <ion-toggle
+          [(ngModel)]="darkMode"
+          (ionChange)="toggleDarkTheme(darkMode)"
+        ></ion-toggle>
+      </ion-item>
 
       <div class="menu-container">
         <ion-button (click)="closeMenu()" class="close-btn" fill="clear">
@@ -111,6 +125,8 @@
           </div>
         </ion-list>
       </div>
+
+      <!-- Modo Escuro -->
 
       <!-- Rodapé -->
       <div class="footer-menu">

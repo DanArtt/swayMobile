@@ -83,6 +83,12 @@ ion-modal.carrinho-modal::part(content) {
   }
 }
 
+body.dark {
+  .slideContentImg .slideImg {
+    filter: invert(100%) brightness(150%);
+  }
+}
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------

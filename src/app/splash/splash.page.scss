@@ -1,6 +1,56 @@
+:host {
+  // Garante tons escuros mesmo em modo claro
+  --background: #000 !important;
+  --ion-background-color: #000 !important;
+}
+
+// Força modo escuro no navegador/sistema
+body {
+  color-scheme: dark;
+  background-color: #000 !important;
+  color: #fff;
+}
+
 .splash-screen {
-  background-color: #000; // cor de fundo da splash
+  background-color: #000 !important;
   height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 9999;
+
+  &.enter {
+    animation: splashFadeIn 1.2s ease forwards;
+  }
+
+  &.exit {
+    animation: splashFadeOutDark 1.5s ease forwards;
+  }
+}
+
+@keyframes splashFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes splashFadeOutDark {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+    background-color: #000;
+  }
+  100% {
+    opacity: 0;
+    filter: blur(6px);
+    background-color: #000;
+  }
 }
 
 .logo-container {
@@ -10,58 +60,54 @@
   flex-direction: column;
   align-items: center;
   color: white;
+  padding: 2rem;
 }
 
 .app-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 500px;
-  height: 500px;
-  animation: fadeIn 2s ease-in-out;
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  animation: floatLogo 6s ease-in-out infinite alternate;
 }
 
-.loading-bar {
-  margin-top: 20px;
-  width: 120px;
-  height: 5px;
-  background-color: #333;
-  overflow: hidden;
-  border-radius: 4px;
-  position: relative;
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .carregamento {
   width: 45px;
   height: 45px;
   --spinner-color: #fff;
-  transform: scale(1.5); // aumenta o spinner
+  transform: scale(1.5);
+  opacity: 0;
+  animation: fadeInSpinner 1s ease 0.8s forwards;
 }
 
-.bar {
-  height: 100%;
-  width: 0%;
-  background-color: #fff;
-  animation: loading 2.5s forwards;
-}
-
-@keyframes loading {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
+@keyframes fadeInSpinner {
   to {
     opacity: 1;
-    transform: scale(1);
+  }
+}
+
+.fade-in-home {
+  animation: fadeInHomeDark 1.2s ease forwards;
+}
+
+@keyframes fadeInHomeDark {
+  0% {
+    opacity: 0;
+    background-color: #000;
+  }
+  100% {
+    opacity: 1;
+    background-color: #111;
   }
 }

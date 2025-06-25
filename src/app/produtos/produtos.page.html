@@ -33,11 +33,12 @@
   <div class="ordenacao-container">
     <div class="ordemAlfabetica">
       <ion-checkbox
+        class="checkboxOrdem"
         [(ngModel)]="ordenarPorNome"
         (ionChange)="ordenarProdutos()"
       >
       </ion-checkbox>
-      <ion-label>Ordem Alfabética</ion-label>
+      <ion-label class="textOrdem">Ordem Alfabética</ion-label>
     </div>
 
     <ion-button class="botaoOrdem" (click)="abrirModalOrdenacao()">
@@ -71,6 +72,7 @@
             <ion-button
               expand="block"
               class="buy-button"
+              color="button-background"
               (click)="adicionarAoCarrinho(produto)"
               >Comprar</ion-button
             >

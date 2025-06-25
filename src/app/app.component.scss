@@ -1,5 +1,6 @@
 .full-screen-menu {
-  background: #d9d9d9;
+  background: var(--menu-background);
+  transition: filter 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7,8 +8,10 @@
 }
 
 .logout-btn {
-  --background: #000;
+  --background: var(--auth-button-bg);
+  transition: filter 0.3s ease;
   margin-top: -15px;
+  color: var(--buy-button-text);
   margin-bottom: 10px;
   --border-radius: 25px;
 }
@@ -18,12 +21,15 @@
 }
 
 .text-categoria {
-  background: #c5c5c5;
+  background: var(--menu-category-background);
+  transition: filter 0.3s ease;
   display: block;
   width: 100%;
   padding: 8px;
   font-size: 18px;
   font-weight: 100;
+  color: var(--menu-text-color);
+  transition: filter 0.3s ease;
 }
 
 .menu-container {
@@ -40,7 +46,8 @@
   width: 100%;
   margin-top: 50px;
   height: 120px;
-  background: #c5c5c5;
+  background: var(--menu-footer-background);
+  transition: filter 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,17 +57,21 @@
 .lema {
   text-transform: uppercase;
   font-size: 20px;
+  margin-bottom: 5px;
+  color: var(--menu-text-color);
+  transition: filter 0.3s ease;
 }
 
 .logo-menu {
   display: flex;
   width: 120px;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
   filter: invert(100%);
 }
 
 .close-btn {
-  color: #000;
+  color: var(--close-btn-color);
+  transition: filter 0.3s ease;
   position: absolute;
   top: 12px;
   right: 12px;
@@ -84,12 +95,13 @@
   ion-item {
     font-size: 20px;
     font-weight: 600;
-    color: #000;
+    color: var(--menu-text-color);
     --background: transparent;
     --padding-start: 12px;
     --inner-padding-end: 8px;
     height: 42px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid var(--menu-border-color);
+    transition: filter 0.3s ease;
 
     ion-icon {
       font-size: 20px;
@@ -104,10 +116,13 @@
     height: 36px;
     --padding-start: 28px;
     --background: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid var(--submenu-border-color);
+    color: var(--menu-text-color);
+    transition: filter 0.3s ease;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: var(--submenu-hover-bg);
+      transition: filter 0.3s ease;
     }
   }
 }
@@ -119,8 +134,9 @@
   text-align: left;
 
   .btn-entrar {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--auth-button-bg);
+    color: var(--auth-button-text);
+    transition: filter 0.3s ease;
     border-radius: 25px;
     font-weight: 300;
     width: 100px;
@@ -135,11 +151,13 @@
 
   .register-link {
     font-size: 20px;
-    color: #000;
+    color: var(--auth-link-color);
+    transition: filter 0.3s ease;
 
     a {
-      color: #000;
+      color: var(--auth-link-color);
       text-decoration: underline;
+      transition: filter 0.3s ease;
     }
   }
 }
@@ -156,7 +174,8 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 2px solid var(--profile-border-color);
+  transition: filter 0.3s ease;
 }
 
 .profile-info {
@@ -166,22 +185,69 @@
   margin-left: 12px;
   font-size: 18px;
   flex-wrap: wrap;
+  color: var(--menu-text-color);
+  transition: filter 0.3s ease;
 }
 
 .ancora {
   text-decoration: underline;
-  text-decoration-color: black;
+  text-decoration-color: var(--anchor-underline-color);
   text-decoration-thickness: 0.1rem;
   text-underline-offset: 4px;
-  color: #000000;
+  color: var(--anchor-color);
+  transition: filter 0.3s ease;
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 
 .subtext {
   font-size: 14px;
-  color: #414141;
+  color: var(--menu-subtext-color);
+  transition: filter 0.3s ease;
   font-weight: 300;
+  margin-top: 5px;
 }
 
 .emailclass {
   font-size: 13px;
+  color: var(--menu-subtext-color);
+  transition: filter 0.3s ease;
+}
+
+ion-icon {
+  color: var(--icon-color);
+  transition: filter 0.3s ease;
+}
+
+.toggleDarkMode {
+  --background: transparent;
+  --color: var(--toggle-label-color);
+  border-bottom: 1px solid var(--toggle-border-color);
+  transition: filter 0.3s ease;
+
+  ion-icon {
+    color: var(--toggle-label-color);
+  }
+
+  ion-label {
+    color: var(--toggle-label-color);
+  }
+
+  ion-toggle {
+    --handle-background: var(--toggle-handle-bg);
+    --track-background: var(--toggle-track-bg);
+    transition: filter 0.3s ease;
+  }
+}
+.logo-menu {
+  filter: invert(100%);
+  transition: filter 0.3s ease;
+}
+
+:host-context(body.dark) .logo-menu {
+  filter: invert(0%);
 }

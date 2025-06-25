@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular'; // Importa ToastController
 import { CarrinhoService } from 'src/app/services/carrinho.service';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -14,10 +15,12 @@ export class CarrinhoComponent implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private toastController: ToastController, // Injeta ToastController
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit() {
+    this.themeService.initTheme();
     this.carregarItens();
   }
 

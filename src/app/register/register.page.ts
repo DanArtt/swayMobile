@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-register',
@@ -22,10 +23,13 @@ export class RegisterPage implements OnInit {
     private loadingController: LoadingController,
     private router: Router,
     private authService: AuthService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private themeService: ThemeService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.themeService.initTheme();
+  }
 
   // 🚀 Método para registrar no Firebase
   async register() {

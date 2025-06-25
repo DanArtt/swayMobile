@@ -12,7 +12,7 @@ body {
 }
 
 .background-wrapper {
-  background-color: #fff;
+  background-color: var(--ion-background-color, #ffffff);
   position: relative;
   width: 100%;
   height: 100vh;
@@ -50,11 +50,11 @@ body {
   top: -8px;
   right: -85px;
   margin-top: -5px;
-  color: #000000;
+  color: var(--texto-dakmode, #000000);
 }
 
 .card {
-  background: #ddd9d9cc;
+  background: var(--color-card, #ddd9d9cc);
   border-radius: 25px;
   padding: 30px 20px;
   width: 90%;
@@ -82,18 +82,18 @@ label {
   padding-top: 5px;
   margin-bottom: 5px;
   font-size: 16px;
-  color: #000000;
+  color: var(--texto-dakmode, #000000);
 }
 
 .campo {
   width: 85%;
   padding: 10px;
   border-radius: 15px;
-  border: 1px solid #b2b2b2;
+  border: 1px solid var(--texto-dakmode, #b2b2b2);
   font-size: 14px;
   outline: none;
   background-color: #ffffff;
-  color: #000000;
+  color: var(--texto-dakmode, #000000);
   box-shadow: 2px 2px 5px #000000;
 }
 
@@ -103,8 +103,8 @@ label {
   margin-top: 25px;
   padding: 10px;
   border-radius: 15px;
-  background-color: black;
-  color: white;
+  background-color: var(--botao-darkmode, #000000);
+  color: var(--texto-botao, #ffffff);
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
@@ -126,48 +126,44 @@ label {
   cursor: pointer;
 }
 
-.containerCampo {
-  display: flex;
-}
-
-.inputCep,
-.inputNumeroCasa {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.campoCep {
-  width: 75%;
-  padding: 10px;
-  border-radius: 15px;
-  border: 1px solid #b2b2b2;
-  font-size: 14px;
-  outline: none;
-  background-color: #ffffff;
-  color: #000000;
-  margin-left: 25px;
-  box-shadow: 2px 2px 5px #000000;
-}
-
-.campoCasa {
-  width: 85%;
-  padding: 10px;
-  border-radius: 15px;
-  border: 1px solid #b2b2b2;
-  font-size: 14px;
-  outline: none;
-  background-color: #ffffff;
-  color: #000000;
-  box-shadow: 2px 2px 5px #000000;
-}
-
-.labelCasa {
-  position: relative;
-  right: 22px;
-}
-
 ion-input {
   --box-shadow: none;
   --background: transparent !important;
+  --color: var(--texto-dakmode, #000000);
+  --helper-text-color: var(--texto-dakmode, #000000);
+}
+
+:host-context(body.dark) ion-input {
+  --helper-text-color: var(--texto-dakmode, #000000);
+}
+
+.background-img {
+  filter: invert(0%);
+  transition: filter 0.3s ease;
+}
+
+:host-context(body.dark) .background-img {
+  filter: invert(100%);
+}
+
+.logo-sway {
+  filter: invert(0%);
+  transition: filter 0.3s ease;
+}
+
+:host-context(body.dark) .logo-sway {
+  filter: invert(100%);
+}
+
+.back-btn {
+  filter: invert(0%);
+  transition: filter 0.3s ease;
+}
+
+:host-context(body.dark) .back-btn {
+  filter: invert(100%);
+}
+
+ion-input::placeholder {
+  color: var(--texto-dakmode, #000000);
 }

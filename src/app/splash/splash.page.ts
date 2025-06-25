@@ -13,17 +13,25 @@ export class SplashPage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Inicia o áudio
     this.audio.src = '../assets/sounds/tema-metro-rio.mp3';
     this.audio.load();
     this.audio.play().catch((e) => {
       console.log('Erro ao tocar áudio:', e);
     });
 
-    // Timer de 3 segundos para navegação
+    const splash = document.querySelector('.splash-screen');
+    splash?.classList.add('enter');
+
     setTimeout(() => {
-      this.audio.pause();
-      this.router.navigateByUrl('/home');
+      splash?.classList.remove('enter');
+      splash?.classList.add('exit');
+
+      // Aguarda o fade-out terminar
+      setTimeout(() => {
+        this.audio.pause();
+        // Redireciona para home com fade-in
+        this.router.navigateByUrl('/home', { replaceUrl: true });
+      }, 1500);
     }, 8000);
   }
 }

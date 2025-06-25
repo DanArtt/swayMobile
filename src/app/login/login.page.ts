@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-login',
@@ -17,16 +18,30 @@ export class LoginPage implements OnInit {
     private loadingController: LoadingController,
     private toastController: ToastController,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private themeService: ThemeService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.themeService.initTheme();
+  }
 
   loginParaHome() {
     this.router.navigate(['/home']);
   }
 
   async login() {
+    // Validação de campos vazios
+    if (!this.email || !this.senha) {
+      const toast = await this.toastController.create({
+        message: 'Por favor, preencha o e-mail e a senha.',
+        duration: 3000,
+        color: 'warning',
+      });
+      await toast.present();
+      return;
+    }
+
     const loading = await this.loadingController.create({
       message: 'Autenticando...',
       spinner: 'crescent',
@@ -38,18 +53,27 @@ export class LoginPage implements OnInit {
 
     this.authService
       .login(this.email, this.senha)
-      .then(() => {
-        loading.dismiss();
+      .then(async () => {
+        await loading.dismiss();
+
+        const toast = await this.toastController.create({
+          message: 'Login realizado com sucesso!',
+          duration: 3000,
+          color: 'success',
+        });
+        await toast.present();
+
         this.router.navigate(['/home']);
       })
       .catch(async (err) => {
-        loading.dismiss();
+        await loading.dismiss();
+
         const toast = await this.toastController.create({
-          message: 'Erro ao autenticar: ' + err.message,
+          message: 'Por favor, verifique se seu e-mail e senha estão corretos.',
           duration: 3000,
           color: 'danger',
         });
-        toast.present();
+        await toast.present();
       });
   }
 
@@ -74,7 +98,7 @@ export class LoginPage implements OnInit {
       await toast.present();
     } catch (error) {
       const toast = await this.toastController.create({
-        message: 'Erro ao enviar e-mail: ' + (error as any).message,
+        message: 'Erro ao enviar e-mail.',
         duration: 3000,
         color: 'danger',
       });
